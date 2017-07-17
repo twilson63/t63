@@ -9282,7 +9282,6 @@ var index$2 = function (props) {
   )
 };
 
-//import PropTypes from 'prop-types'
 var ListItem = function (props) {
   var className = combine(
      "flex items-center lh-copy pa3 ph0-l bb b--black-10",
