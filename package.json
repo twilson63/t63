@@ -38,5 +38,13 @@
       "es2015",
       "react"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twilson63/t63.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twilson63/t63/issues"
+  },
+  "homepage": "https://github.com/twilson63/t63#readme"
 }
