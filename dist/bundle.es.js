@@ -9293,4 +9293,48 @@ var ListItem = function (props) {
   )
 };
 
-export { index as Button, index$2 as List, ListItem };
+var pathOr$2 = index$1.pathOr;
+var propOr$2 = index$1.propOr;
+var merge$2 = index$1.merge;
+
+var TextField = function (props) {
+  var lblClassName = combine(
+    'f6 b db mb2',
+    pathOr$2('', ['label', 'className'], props)
+  );
+  var labelProps = merge$2(propOr$2({}, 'label', props), {
+    className: lblClassName
+  });
+
+  var inputClassName = combine(
+    'input-reset ba b--black-20 pa2 mb2 db w-100',
+    pathOr$2('', ['input', 'className'], props)
+  );
+  var inputProps = merge$2(propOr$2({}, 'input', props), {
+    className: inputClassName,
+    value: props.value,
+    onChange: props.onChange,
+    type: 'text'
+  });
+
+  var helpClassName = combine(
+    'input-reset ba b--black-20 pa2 mb2 db w-100',
+    pathOr$2('', ['help', 'className'], props)
+  );
+  var helpProps = merge$2(propOr$2({}, 'help', props), {
+    className: helpClassName
+  });
+
+  return (
+    React.createElement( 'div', { className: "measure" },
+      React.createElement( 'label', labelProps,
+        props.name,
+        props.optional && React.createElement( 'span', { className: "normal black-60" }, "(optional)")
+      ),
+      React.createElement( 'input', inputProps),
+      React.createElement( 'small', helpProps, props.helpTxt)
+    )
+  )
+};
+
+export { index as Button, index$2 as List, ListItem, TextField };
