@@ -48,9 +48,9 @@ const () => (
 
 ## components
 
-* Button
-* List
-* ListItem
+* [Button](src/button/README.md)
+* [List](src/list/README.md)
+* [ListItem](src/list-item/README.md)
 * TextField
 * TextArea
 * Header

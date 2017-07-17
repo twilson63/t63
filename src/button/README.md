@@ -21,6 +21,8 @@ export default MyComponent
 
 ```
 
+## Links
+
 * [code](index.js)
 * [test](test.js)
 

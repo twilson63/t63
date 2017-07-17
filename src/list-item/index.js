@@ -1,5 +1,4 @@
 import React from 'react'
-//import PropTypes from 'prop-types'
 import R from 'ramda'
 import combine from '../lib/combine-string-lists'
 
@@ -19,10 +18,5 @@ const ListItem = props => {
     </li>
   )
 }
-
-// ListItem.propTypes = {
-//   left: PropTypes.element,
-//   right: PropTypes.element
-// }
 
 export default ListItem
