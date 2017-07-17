@@ -9318,7 +9318,7 @@ var TextField = function (props) {
   });
 
   var helpClassName = combine(
-    'input-reset ba b--black-20 pa2 mb2 db w-100',
+    'f6 black-60 db mb2',
     pathOr$2('', ['help', 'className'], props)
   );
   var helpProps = merge$2(propOr$2({}, 'help', props), {
@@ -9337,4 +9337,49 @@ var TextField = function (props) {
   )
 };
 
-export { index as Button, index$2 as List, ListItem, TextField };
+var pathOr$3 = index$1.pathOr;
+var propOr$3 = index$1.propOr;
+var merge$3 = index$1.merge;
+
+var TextField$2 = function (props) {
+  var lblClassName = combine(
+    'f6 b db mb2',
+    pathOr$3('', ['label', 'className'], props)
+  );
+  var labelProps = merge$3(propOr$3({}, 'label', props), {
+    className: lblClassName
+  });
+
+  var textareaClassName = combine(
+    'input-reset ba b--black-20 pa2 mb2 db w-100',
+    pathOr$3('', ['textarea', 'className'], props)
+  );
+
+  var textareaProps = merge$3(propOr$3({}, 'textarea', props), {
+    className: textareaClassName,
+    value: props.value,
+    onChange: props.onChange,
+    type: 'text'
+  });
+
+  var helpClassName = combine(
+    'f6 black-60 db mb2',
+    pathOr$3('', ['help', 'className'], props)
+  );
+  var helpProps = merge$3(propOr$3({}, 'help', props), {
+    className: helpClassName
+  });
+
+  return (
+    React.createElement( 'div', { className: "measure" },
+      React.createElement( 'label', labelProps,
+        props.name,
+        props.optional && React.createElement( 'span', { className: "normal black-60" }, "(optional)")
+      ),
+      React.createElement( 'textarea', textareaProps),
+      React.createElement( 'small', helpProps, props.helpTxt)
+    )
+  )
+};
+
+export { index as Button, index$2 as List, ListItem, TextField, TextField$2 as TextArea };

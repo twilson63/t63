@@ -14,12 +14,13 @@ const TextField = props => {
     className: lblClassName
   })
 
-  const inputClassName = combine(
+  const textareaClassName = combine(
     'input-reset ba b--black-20 pa2 mb2 db w-100',
-    pathOr('', ['input', 'className'], props)
+    pathOr('', ['textarea', 'className'], props)
   )
-  const inputProps = merge(propOr({}, 'input', props), {
-    className: inputClassName,
+
+  const textareaProps = merge(propOr({}, 'textarea', props), {
+    className: textareaClassName,
     value: props.value,
     onChange: props.onChange,
     type: 'text'
@@ -39,7 +40,7 @@ const TextField = props => {
         {props.name}
         {props.optional && <span className="normal black-60">(optional)</span>}
       </label>
-      <input {...inputProps} />
+      <textarea {...textareaProps} />
       <small {...helpProps}>{props.helpTxt}</small>
     </div>
   )
