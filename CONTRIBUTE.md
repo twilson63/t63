@@ -72,6 +72,16 @@ Once reviewed and approved, your component will be published to npm as a new min
 
 ## FAQ
 
+* How do I setup the development environment?
+
+    See [SETUP](README.md/#setup)
+
+* What testing framework does this project use?
+
+* Do these components work for other libraries like preact or inferno?
+
+    Not tested with other libraries other than react, but if they offer a compat mode, then these components should work fine.
+
 TODO: We will try to add questions as they come up, or you can also add your question here, and we will try to answer it here.
 
 ## Summary
