@@ -7,7 +7,8 @@
   "scripts": {
     "build": "rollup -c ./rollup.config.js -n t63",
     "test": "babel-tape-runner \"src/**/*test.js\" | faucet",
-    "dev": "rollup -c -w ./rollup.config.js -n t63"
+    "dev": "rollup -c -w ./rollup.config.js -n t63",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "Tom",
