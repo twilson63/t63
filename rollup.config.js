@@ -1,4 +1,4 @@
-import buble from 'rollup-plugin-buble'
+import babel from 'rollup-plugin-babel'
 import jsx from 'rollup-plugin-jsx'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
@@ -7,7 +7,9 @@ export default {
   entry: 'src/index.js',
   external: ['react'],
   plugins: [
-    buble(),
+    babel({
+      exclude: 'node_modules/**'
+    }),
     jsx({ factory: 'React.createElement' }),
     resolve(),
     commonjs()

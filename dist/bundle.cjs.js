@@ -225,8 +225,6 @@ var _arity = function _arity(n, fn) {
  */
 var _curryN = function _curryN(length, received, fn) {
   return function() {
-    var arguments$1 = arguments;
-
     var combined = [];
     var argsIdx = 0;
     var left = length;
@@ -235,10 +233,10 @@ var _curryN = function _curryN(length, received, fn) {
       var result;
       if (combinedIdx < received.length &&
           (!_isPlaceholder(received[combinedIdx]) ||
-           argsIdx >= arguments$1.length)) {
+           argsIdx >= arguments.length)) {
         result = received[combinedIdx];
       } else {
-        result = arguments$1[argsIdx];
+        result = arguments[argsIdx];
         argsIdx += 1;
       }
       combined[combinedIdx] = result;
@@ -980,13 +978,10 @@ var reduce = _curry3(_reduce);
  */
 var allPass = _curry1(function allPass(preds) {
   return curryN(reduce(max, 0, pluck('length', preds)), function() {
-    var arguments$1 = arguments;
-    var this$1 = this;
-
     var idx = 0;
     var len = preds.length;
     while (idx < len) {
-      if (!preds[idx].apply(this$1, arguments$1)) {
+      if (!preds[idx].apply(this, arguments)) {
         return false;
       }
       idx += 1;
@@ -1106,13 +1101,10 @@ var any = _curry2(_dispatchable(['any'], _xany, function any(fn, list) {
  */
 var anyPass = _curry1(function anyPass(preds) {
   return curryN(reduce(max, 0, pluck('length', preds)), function() {
-    var arguments$1 = arguments;
-    var this$1 = this;
-
     var idx = 0;
     var len = preds.length;
     while (idx < len) {
-      if (preds[idx].apply(this$1, arguments$1)) {
+      if (preds[idx].apply(this, arguments)) {
         return true;
       }
       idx += 1;
@@ -2852,13 +2844,10 @@ var cond = _curry1(function cond(pairs) {
                      0,
                      map(function(pair) { return pair[0].length; }, pairs));
   return _arity(arity, function() {
-    var arguments$1 = arguments;
-    var this$1 = this;
-
     var idx = 0;
     while (idx < pairs.length) {
-      if (pairs[idx][0].apply(this$1, arguments$1)) {
-        return pairs[idx][1].apply(this$1, arguments$1);
+      if (pairs[idx][0].apply(this, arguments)) {
+        return pairs[idx][1].apply(this, arguments);
       }
       idx += 1;
     }
@@ -3028,12 +3017,10 @@ var _xreduceBy = (function() {
   }
   XReduceBy.prototype['@@transducer/init'] = _xfBase.init;
   XReduceBy.prototype['@@transducer/result'] = function(result) {
-    var this$1 = this;
-
     var key;
-    for (key in this$1.inputs) {
-      if (_has(key, this$1.inputs)) {
-        result = this$1.xf['@@transducer/step'](result, this$1.inputs[key]);
+    for (key in this.inputs) {
+      if (_has(key, this.inputs)) {
+        result = this.xf['@@transducer/step'](result, this.inputs[key]);
         if (result['@@transducer/reduced']) {
           result = result['@@transducer/value'];
           break;
@@ -5296,8 +5283,6 @@ var intersperse = _curry2(_checkForMethod('intersperse', function intersperse(se
 
 // Based on https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 var _objectAssign = function _objectAssign(target) {
-  var arguments$1 = arguments;
-
   if (target == null) {
     throw new TypeError('Cannot convert undefined or null to object');
   }
@@ -5306,7 +5291,7 @@ var _objectAssign = function _objectAssign(target) {
   var idx = 1;
   var length = arguments.length;
   while (idx < length) {
-    var source = arguments$1[idx];
+    var source = arguments[idx];
     if (source != null) {
       for (var nextKey in source) {
         if (_has(nextKey, source)) {
@@ -7208,13 +7193,10 @@ var product = reduce(multiply, 1);
  */
 var useWith = _curry2(function useWith(fn, transformers) {
   return curryN(transformers.length, function() {
-    var arguments$1 = arguments;
-    var this$1 = this;
-
     var args = [];
     var idx = 0;
     while (idx < transformers.length) {
-      args.push(transformers[idx].call(this$1, arguments$1[idx]));
+      args.push(transformers[idx].call(this, arguments[idx]));
       idx += 1;
     }
     return fn.apply(this, args.concat(Array.prototype.slice.call(arguments, transformers.length)));
@@ -8507,16 +8489,13 @@ var unary = _curry1(function unary(fn) {
  */
 var uncurryN = _curry2(function uncurryN(depth, fn) {
   return curryN(depth, function() {
-    var arguments$1 = arguments;
-    var this$1 = this;
-
     var currentDepth = 1;
     var value = fn;
     var idx = 0;
     var endIdx;
     while (currentDepth <= depth && typeof value === 'function') {
-      endIdx = currentDepth === depth ? arguments$1.length : idx + value.length;
-      value = value.apply(this$1, Array.prototype.slice.call(arguments$1, idx, endIdx));
+      endIdx = currentDepth === depth ? arguments.length : idx + value.length;
+      value = value.apply(this, Array.prototype.slice.call(arguments, idx, endIdx));
       currentDepth += 1;
       idx = endIdx;
     }
@@ -9253,69 +9232,68 @@ var join = index$1.join;
 var union = index$1.union;
 var split = index$1.split;
 
-var combine = function (a, b) {
-    if ( a === void 0 ) a='';
-    if ( b === void 0 ) b='';
 
-    return join(' ', union(split(' ', a), split(' ', b)));
-};
+var combine = (function () {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+  return join(' ', union(split(' ', a), split(' ', b)));
+});
 
-var index = function (props) {
-  var className = combine(
-     "f6 link dim br1 ph3 pv2 mb2 dib white bg-black",
-     props.className);
+var index = (function (props) {
+  var className = combine("f6 link dim br1 ph3 pv2 mb2 dib white bg-black", props.className);
   // className={className}
   var newProps = index$1.merge(props, { className: className });
-  return (
-    React.createElement( 'button', newProps, props.children)
-  )
-};
+  return React.createElement(
+    'button',
+    newProps,
+    props.children
+  );
+});
 
-var index$2 = function (props) {
-  var className = combine(
-     "list pl0 mt0 measure center",
-     props.className);
+var index$2 = (function (props) {
+  var className = combine("list pl0 mt0 measure center", props.className);
   var newProps = index$1.merge(props, { className: className });
 
-  return (
-    React.createElement( 'ul', newProps, props.children)
-  )
-};
+  return React.createElement(
+    'ul',
+    newProps,
+    props.children
+  );
+});
 
-var ListItem = function (props) {
-  var className = combine(
-     "flex items-center lh-copy pa3 ph0-l bb b--black-10",
-     props.className);
+var ListItem = function ListItem(props) {
+  var className = combine("flex items-center lh-copy pa3 ph0-l bb b--black-10", props.className);
   var newProps = index$1.merge(index$1.omit(['left', 'right'], props), { className: className });
 
-  return (
-    React.createElement( 'li', newProps,
-      props.left && props.left,
-      React.createElement( 'div', { className: "pl3 flex-auto" },
-        props.children
-      ),
-      props.right && React.createElement( 'div', null, props.right )
+  return React.createElement(
+    'li',
+    newProps,
+    props.left && props.left,
+    React.createElement(
+      'div',
+      { className: 'pl3 flex-auto' },
+      props.children
+    ),
+    props.right && React.createElement(
+      'div',
+      null,
+      props.right
     )
-  )
+  );
 };
 
 var pathOr$2 = index$1.pathOr;
 var propOr$2 = index$1.propOr;
 var merge$2 = index$1.merge;
 
-var TextField = function (props) {
-  var lblClassName = combine(
-    'f6 b db mb2',
-    pathOr$2('', ['label', 'className'], props)
-  );
+
+var TextField = function TextField(props) {
+  var lblClassName = combine('f6 b db mb2', pathOr$2('', ['label', 'className'], props));
   var labelProps = merge$2(propOr$2({}, 'label', props), {
     className: lblClassName
   });
 
-  var inputClassName = combine(
-    'input-reset ba b--black-20 pa2 mb2 db w-100',
-    pathOr$2('', ['input', 'className'], props)
-  );
+  var inputClassName = combine('input-reset ba b--black-20 pa2 mb2 db w-100', pathOr$2('', ['input', 'className'], props));
   var inputProps = merge$2(propOr$2({}, 'input', props), {
     className: inputClassName,
     value: props.value,
@@ -9323,43 +9301,45 @@ var TextField = function (props) {
     type: 'text'
   });
 
-  var helpClassName = combine(
-    'f6 black-60 db mb2',
-    pathOr$2('', ['help', 'className'], props)
-  );
+  var helpClassName = combine('f6 black-60 db mb2', pathOr$2('', ['help', 'className'], props));
   var helpProps = merge$2(propOr$2({}, 'help', props), {
     className: helpClassName
   });
 
-  return (
-    React.createElement( 'div', { className: "measure" },
-      React.createElement( 'label', labelProps,
-        props.name,
-        props.optional && React.createElement( 'span', { className: "normal black-60" }, "(optional)")
-      ),
-      React.createElement( 'input', inputProps),
-      React.createElement( 'small', helpProps, props.helpTxt)
+  return React.createElement(
+    'div',
+    { className: 'measure' },
+    React.createElement(
+      'label',
+      labelProps,
+      props.name,
+      props.optional && React.createElement(
+        'span',
+        { className: 'normal black-60' },
+        '(optional)'
+      )
+    ),
+    React.createElement('input', inputProps),
+    React.createElement(
+      'small',
+      helpProps,
+      helpProps.text || props.helpTxt
     )
-  )
+  );
 };
 
 var pathOr$3 = index$1.pathOr;
 var propOr$3 = index$1.propOr;
 var merge$3 = index$1.merge;
 
-var TextField$2 = function (props) {
-  var lblClassName = combine(
-    'f6 b db mb2',
-    pathOr$3('', ['label', 'className'], props)
-  );
+
+var TextField$2 = function TextField(props) {
+  var lblClassName = combine('f6 b db mb2', pathOr$3('', ['label', 'className'], props));
   var labelProps = merge$3(propOr$3({}, 'label', props), {
     className: lblClassName
   });
 
-  var textareaClassName = combine(
-    'input-reset ba b--black-20 pa2 mb2 db w-100',
-    pathOr$3('', ['textarea', 'className'], props)
-  );
+  var textareaClassName = combine('input-reset ba b--black-20 pa2 mb2 db w-100', pathOr$3('', ['textarea', 'className'], props));
 
   var textareaProps = merge$3(propOr$3({}, 'textarea', props), {
     className: textareaClassName,
@@ -9368,24 +9348,123 @@ var TextField$2 = function (props) {
     type: 'text'
   });
 
-  var helpClassName = combine(
-    'f6 black-60 db mb2',
-    pathOr$3('', ['help', 'className'], props)
-  );
+  var helpClassName = combine('f6 black-60 db mb2', pathOr$3('', ['help', 'className'], props));
   var helpProps = merge$3(propOr$3({}, 'help', props), {
     className: helpClassName
   });
 
-  return (
-    React.createElement( 'div', { className: "measure" },
-      React.createElement( 'label', labelProps,
-        props.name,
-        props.optional && React.createElement( 'span', { className: "normal black-60" }, "(optional)")
-      ),
-      React.createElement( 'textarea', textareaProps),
-      React.createElement( 'small', helpProps, props.helpTxt)
+  return React.createElement(
+    'div',
+    { className: 'measure' },
+    React.createElement(
+      'label',
+      labelProps,
+      props.name,
+      props.optional && React.createElement(
+        'span',
+        { className: 'normal black-60' },
+        '(optional)'
+      )
+    ),
+    React.createElement('textarea', textareaProps),
+    React.createElement(
+      'small',
+      helpProps,
+      props.helpTxt
     )
-  )
+  );
+};
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+var find$2 = index$1.find;
+var propEq$2 = index$1.propEq;
+var omit$2 = index$1.omit;
+
+
+var Header = function Header(props) {
+  var className = combine('flex items-center justify-between h3', props.className);
+  var headerProps = omit$2(['className'], props);
+
+  return React.createElement(
+    'header',
+    _extends({ className: className }, headerProps),
+    find$2(propEq$2('type', Header.Left), props.children) || React.createElement(Header.Left, null),
+    props.children.length ? find$2(propEq$2('type', Header.Center), props.children) : props.children || React.createElement(Header.Center, null),
+    find$2(propEq$2('type', Header.Right), props.children) || React.createElement(Header.Right, null)
+  );
+};
+
+Header.Center = function (props) {
+  return React.createElement(
+    'div',
+    null,
+    props.children
+  );
+};
+
+Header.Left = function (props) {
+  return React.createElement(
+    'div',
+    { className: 'ml2 w2' },
+    props.children
+  );
+};
+
+Header.Right = function (props) {
+  return React.createElement(
+    'div',
+    { className: 'mr2 w2' },
+    props.children
+  );
+};
+
+var map$3 = index$1.map;
+var equals$3 = index$1.equals;
+var omit$3 = index$1.omit;
+
+
+var Select = function Select(props) {
+  var draw = function draw(v) {
+    return function (c) {
+      var className = combine(c.props.className, 'ba pa2 br2 ' + (equals$3(v, c.props.value) && props.selectedClass));
+      return React.createElement(Select.Option, _extends({
+        key: c.props.value
+      }, c.props, {
+        className: className,
+        onClick: function onClick(e) {
+          return props.onChange(c.props.value);
+        }
+      }));
+    };
+  };
+  var selectProps = omit$3(['value', 'onChange'], props);
+  var className = combine(selectProps.className, 'flex items-center justify-between h3');
+  return React.createElement(
+    'div',
+    _extends({}, selectProps, { className: className }),
+    map$3(draw(props.value), props.children)
+  );
+};
+
+Select.Option = function (props) {
+  return React.createElement(
+    'div',
+    props,
+    props.children
+  );
 };
 
 exports.Button = index;
@@ -9393,3 +9472,5 @@ exports.List = index$2;
 exports.ListItem = ListItem;
 exports.TextField = TextField;
 exports.TextArea = TextField$2;
+exports.Header = Header;
+exports.Select = Select;
