@@ -57,6 +57,41 @@ const () => (
 * [ListItem](src/list-item/README.md)
 * [TextField](src/text-field/README.md)
 * [TextArea](src/text-area/README.md)
-* Header
+* [Header](src/header/README.md)
 * Yes/No Button
 * SelectList
+
+## Contributions
+
+All contributions are welcome, see [CONTRIBUTE.md](CONTRIBUTE.md)
+
+
+## Setup
+
+How do I setup the development environment for this project?
+
+### Requirements
+
+* Node 8 (https://nodejs.org)
+
+First you need to fork the repo, and clone it to your local system.
+
+```
+cd t63
+npm install
+npm test
+```
+
+If all tests pass, then you are setup to do development on this project. Checkout the Contribution Guide [CONTRIBUTE.md](CONTRIBUTE.md)
+
+## Publish
+
+How to publish this project?
+
+First you need to make sure all tests are passing, make sure that the README and `src/index.js` file is up to date. And make sure all changes are committed.
+
+```
+npm version minor
+git push origin master --tags
+npm Publish
+```

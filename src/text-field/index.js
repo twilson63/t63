@@ -40,7 +40,7 @@ const TextField = props => {
         {props.optional && <span className="normal black-60">(optional)</span>}
       </label>
       <input {...inputProps} />
-      <small {...helpProps}>{props.helpTxt}</small>
+      <small {...helpProps}>{helpProps.text || props.helpTxt}</small>
     </div>
   )
 }

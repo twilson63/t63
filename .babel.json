@@ -1,0 +1,3089 @@
+{
+  "{\"filename\":\"/app/src/button/test.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/button\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "tape",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "test"
+              }
+            ]
+          },
+          {
+            "source": "enzyme",
+            "imported": [
+              "shallow"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "shallow",
+                "local": "shallow"
+              }
+            ]
+          },
+          {
+            "source": "./",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "Button"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/button/test.js",
+      "filenameRelative": "/app/src/button/test.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "test.js",
+      "sourceFileName": "test.js",
+      "sourceRoot": "/app/src/button",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/button",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "test"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _tape = require('tape');\n\nvar _tape2 = _interopRequireDefault(_tape);\n\nvar _enzyme = require('enzyme');\n\nvar _ = require('./');\n\nvar _2 = _interopRequireDefault(_);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _tape2.default)('<Button />', function (t) {\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(\n    _2.default,\n    null,\n    'Foo'\n  ));\n  t.equal(wrapper.text(), 'Foo');\n  t.end();\n});\n\n(0, _tape2.default)('<Button onClick />', function (t) {\n  var beep = 'beep';\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(\n    _2.default,\n    { onClick: function onClick(e) {\n        return beep = 'boop';\n      } },\n    'Foo'\n  ));\n  wrapper.simulate('click');\n  t.equal(beep, 'boop');\n  t.end();\n});\n\n(0, _tape2.default)('<Button className />', function (t) {\n  var className = 'green bg-washed-green b--green';\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(\n    _2.default,\n    { className: className },\n    'Foo'\n  ));\n\n  t.equal('f6 link dim br1 ph3 pv2 mb2 dib white bg-black green bg-washed-green b--green', wrapper.props().className);\n  t.end();\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QuanMiXSwibmFtZXMiOlsid3JhcHBlciIsInQiLCJlcXVhbCIsInRleHQiLCJlbmQiLCJiZWVwIiwic2ltdWxhdGUiLCJjbGFzc05hbWUiLCJwcm9wcyJdLCJtYXBwaW5ncyI6Ijs7QUFBQTs7OztBQUNBOzs7O0FBQ0E7O0FBQ0E7Ozs7OztBQUVBLG9CQUFLLFlBQUwsRUFBbUIsYUFBSztBQUN0QixNQUFNQSxVQUFVLHFCQUFRO0FBQUE7QUFBQTtBQUFBO0FBQUEsR0FBUixDQUFoQjtBQUNBQyxJQUFFQyxLQUFGLENBQVFGLFFBQVFHLElBQVIsRUFBUixFQUF3QixLQUF4QjtBQUNBRixJQUFFRyxHQUFGO0FBQ0QsQ0FKRDs7QUFNQSxvQkFBSyxvQkFBTCxFQUEyQixhQUFLO0FBQzlCLE1BQUlDLE9BQU8sTUFBWDtBQUNBLE1BQU1MLFVBQVUscUJBQVE7QUFBQTtBQUFBLE1BQVEsU0FBUztBQUFBLGVBQUtLLE9BQU8sTUFBWjtBQUFBLE9BQWpCO0FBQUE7QUFBQSxHQUFSLENBQWhCO0FBQ0FMLFVBQVFNLFFBQVIsQ0FBaUIsT0FBakI7QUFDQUwsSUFBRUMsS0FBRixDQUFRRyxJQUFSLEVBQWMsTUFBZDtBQUNBSixJQUFFRyxHQUFGO0FBRUQsQ0FQRDs7QUFVQSxvQkFBSyxzQkFBTCxFQUE2QixhQUFLO0FBQ2hDLE1BQU1HLFlBQVksZ0NBQWxCO0FBQ0EsTUFBTVAsVUFBVSxxQkFBUTtBQUFBO0FBQUEsTUFBUSxXQUFXTyxTQUFuQjtBQUFBO0FBQUEsR0FBUixDQUFoQjs7QUFFQU4sSUFBRUMsS0FBRixDQUNFLCtFQURGLEVBRUVGLFFBQVFRLEtBQVIsR0FBZ0JELFNBRmxCO0FBSUFOLElBQUVHLEdBQUY7QUFFRCxDQVZEIiwiZmlsZSI6InRlc3QuanMiLCJzb3VyY2VSb290IjoiL2FwcC9zcmMvYnV0dG9uIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHRlc3QgZnJvbSAndGFwZSdcbmltcG9ydCB7IHNoYWxsb3cgfSBmcm9tICdlbnp5bWUnXG5pbXBvcnQgQnV0dG9uIGZyb20gJy4vJ1xuXG50ZXN0KCc8QnV0dG9uIC8+JywgdCA9PiB7XG4gIGNvbnN0IHdyYXBwZXIgPSBzaGFsbG93KDxCdXR0b24+Rm9vPC9CdXR0b24+KVxuICB0LmVxdWFsKHdyYXBwZXIudGV4dCgpLCAnRm9vJylcbiAgdC5lbmQoKVxufSlcblxudGVzdCgnPEJ1dHRvbiBvbkNsaWNrIC8+JywgdCA9PiB7XG4gIGxldCBiZWVwID0gJ2JlZXAnXG4gIGNvbnN0IHdyYXBwZXIgPSBzaGFsbG93KDxCdXR0b24gb25DbGljaz17ZSA9PiBiZWVwID0gJ2Jvb3AnfT5Gb288L0J1dHRvbj4pXG4gIHdyYXBwZXIuc2ltdWxhdGUoJ2NsaWNrJylcbiAgdC5lcXVhbChiZWVwLCAnYm9vcCcpXG4gIHQuZW5kKClcblxufSlcblxuXG50ZXN0KCc8QnV0dG9uIGNsYXNzTmFtZSAvPicsIHQgPT4ge1xuICBjb25zdCBjbGFzc05hbWUgPSAnZ3JlZW4gYmctd2FzaGVkLWdyZWVuIGItLWdyZWVuJ1xuICBjb25zdCB3cmFwcGVyID0gc2hhbGxvdyg8QnV0dG9uIGNsYXNzTmFtZT17Y2xhc3NOYW1lfT5Gb288L0J1dHRvbj4pXG5cbiAgdC5lcXVhbChcbiAgICAnZjYgbGluayBkaW0gYnIxIHBoMyBwdjIgbWIyIGRpYiB3aGl0ZSBiZy1ibGFjayBncmVlbiBiZy13YXNoZWQtZ3JlZW4gYi0tZ3JlZW4nLFxuICAgIHdyYXBwZXIucHJvcHMoKS5jbGFzc05hbWVcbiAgKVxuICB0LmVuZCgpXG5cbn0pXG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "test.js"
+      ],
+      "names": [
+        "wrapper",
+        "t",
+        "equal",
+        "text",
+        "end",
+        "beep",
+        "simulate",
+        "className",
+        "props"
+      ],
+      "mappings": ";;AAAA;;;;AACA;;;;AACA;;AACA;;;;;;AAEA,oBAAK,YAAL,EAAmB,aAAK;AACtB,MAAMA,UAAU,qBAAQ;AAAA;AAAA;AAAA;AAAA,GAAR,CAAhB;AACAC,IAAEC,KAAF,CAAQF,QAAQG,IAAR,EAAR,EAAwB,KAAxB;AACAF,IAAEG,GAAF;AACD,CAJD;;AAMA,oBAAK,oBAAL,EAA2B,aAAK;AAC9B,MAAIC,OAAO,MAAX;AACA,MAAML,UAAU,qBAAQ;AAAA;AAAA,MAAQ,SAAS;AAAA,eAAKK,OAAO,MAAZ;AAAA,OAAjB;AAAA;AAAA,GAAR,CAAhB;AACAL,UAAQM,QAAR,CAAiB,OAAjB;AACAL,IAAEC,KAAF,CAAQG,IAAR,EAAc,MAAd;AACAJ,IAAEG,GAAF;AAED,CAPD;;AAUA,oBAAK,sBAAL,EAA6B,aAAK;AAChC,MAAMG,YAAY,gCAAlB;AACA,MAAMP,UAAU,qBAAQ;AAAA;AAAA,MAAQ,WAAWO,SAAnB;AAAA;AAAA,GAAR,CAAhB;;AAEAN,IAAEC,KAAF,CACE,+EADF,EAEEF,QAAQQ,KAAR,GAAgBD,SAFlB;AAIAN,IAAEG,GAAF;AAED,CAVD",
+      "file": "test.js",
+      "sourceRoot": "/app/src/button",
+      "sourcesContent": [
+        "import React from 'react'\nimport test from 'tape'\nimport { shallow } from 'enzyme'\nimport Button from './'\n\ntest('<Button />', t => {\n  const wrapper = shallow(<Button>Foo</Button>)\n  t.equal(wrapper.text(), 'Foo')\n  t.end()\n})\n\ntest('<Button onClick />', t => {\n  let beep = 'beep'\n  const wrapper = shallow(<Button onClick={e => beep = 'boop'}>Foo</Button>)\n  wrapper.simulate('click')\n  t.equal(beep, 'boop')\n  t.end()\n\n})\n\n\ntest('<Button className />', t => {\n  const className = 'green bg-washed-green b--green'\n  const wrapper = shallow(<Button className={className}>Foo</Button>)\n\n  t.equal(\n    'f6 link dim br1 ph3 pv2 mb2 dib white bg-black green bg-washed-green b--green',\n    wrapper.props().className\n  )\n  t.end()\n\n})\n"
+      ]
+    },
+    "mtime": 1502632005678
+  },
+  "{\"filename\":\"/app/src/button/index.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/button\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "../lib/combine-string-lists",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "combine"
+              }
+            ]
+          },
+          {
+            "source": "ramda",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "R"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/button/index.js",
+      "filenameRelative": "/app/src/button/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/src/button",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/button",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _combineStringLists = require('../lib/combine-string-lists');\n\nvar _combineStringLists2 = _interopRequireDefault(_combineStringLists);\n\nvar _ramda = require('ramda');\n\nvar _ramda2 = _interopRequireDefault(_ramda);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = function (props) {\n  var className = (0, _combineStringLists2.default)(\"f6 link dim br1 ph3 pv2 mb2 dib white bg-black\", props.className);\n  // className={className}\n  var newProps = _ramda2.default.merge(props, { className: className });\n  return _react2.default.createElement(\n    'button',\n    newProps,\n    props.children\n  );\n};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImNsYXNzTmFtZSIsInByb3BzIiwibmV3UHJvcHMiLCJtZXJnZSIsImNoaWxkcmVuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQTs7OztBQUNBOzs7O0FBQ0E7Ozs7OztrQkFFZSxpQkFBUztBQUN0QixNQUFNQSxZQUFZLGtDQUNmLGdEQURlLEVBRWZDLE1BQU1ELFNBRlMsQ0FBbEI7QUFHQTtBQUNBLE1BQU1FLFdBQVcsZ0JBQUVDLEtBQUYsQ0FBUUYsS0FBUixFQUFlLEVBQUVELFdBQVdBLFNBQWIsRUFBZixDQUFqQjtBQUNBLFNBQ0U7QUFBQTtBQUFZRSxZQUFaO0FBQXVCRCxVQUFNRztBQUE3QixHQURGO0FBR0QsQyIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL3NyYy9idXR0b24iLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgY29tYmluZSBmcm9tICcuLi9saWIvY29tYmluZS1zdHJpbmctbGlzdHMnXG5pbXBvcnQgUiBmcm9tICdyYW1kYSdcblxuZXhwb3J0IGRlZmF1bHQgcHJvcHMgPT4ge1xuICBjb25zdCBjbGFzc05hbWUgPSBjb21iaW5lKFxuICAgICBcImY2IGxpbmsgZGltIGJyMSBwaDMgcHYyIG1iMiBkaWIgd2hpdGUgYmctYmxhY2tcIixcbiAgICAgcHJvcHMuY2xhc3NOYW1lKVxuICAvLyBjbGFzc05hbWU9e2NsYXNzTmFtZX1cbiAgY29uc3QgbmV3UHJvcHMgPSBSLm1lcmdlKHByb3BzLCB7IGNsYXNzTmFtZTogY2xhc3NOYW1lIH0pXG4gIHJldHVybiAoXG4gICAgPGJ1dHRvbiB7Li4ubmV3UHJvcHN9Pntwcm9wcy5jaGlsZHJlbn08L2J1dHRvbj5cbiAgKVxufVxuIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "className",
+        "props",
+        "newProps",
+        "merge",
+        "children"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;AACA;;;;;;kBAEe,iBAAS;AACtB,MAAMA,YAAY,kCACf,gDADe,EAEfC,MAAMD,SAFS,CAAlB;AAGA;AACA,MAAME,WAAW,gBAAEC,KAAF,CAAQF,KAAR,EAAe,EAAED,WAAWA,SAAb,EAAf,CAAjB;AACA,SACE;AAAA;AAAYE,YAAZ;AAAuBD,UAAMG;AAA7B,GADF;AAGD,C",
+      "file": "index.js",
+      "sourceRoot": "/app/src/button",
+      "sourcesContent": [
+        "import React from 'react'\nimport combine from '../lib/combine-string-lists'\nimport R from 'ramda'\n\nexport default props => {\n  const className = combine(\n     \"f6 link dim br1 ph3 pv2 mb2 dib white bg-black\",\n     props.className)\n  // className={className}\n  const newProps = R.merge(props, { className: className })\n  return (\n    <button {...newProps}>{props.children}</button>\n  )\n}\n"
+      ]
+    },
+    "mtime": 1502632005674
+  },
+  "{\"filename\":\"/app/src/lib/combine-string-lists.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/lib\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "ramda",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "R"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/lib/combine-string-lists.js",
+      "filenameRelative": "/app/src/lib/combine-string-lists.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "combine-string-lists.js",
+      "sourceFileName": "combine-string-lists.js",
+      "sourceRoot": "/app/src/lib",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/lib",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "combine-string-lists"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _ramda = require('ramda');\n\nvar _ramda2 = _interopRequireDefault(_ramda);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar join = _ramda2.default.join,\n    union = _ramda2.default.union,\n    split = _ramda2.default.split;\n\nexports.default = function () {\n  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';\n  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';\n  return join(' ', union(split(' ', a), split(' ', b)));\n};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbWJpbmUtc3RyaW5nLWxpc3RzLmpzIl0sIm5hbWVzIjpbImpvaW4iLCJ1bmlvbiIsInNwbGl0IiwiYSIsImIiXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBOzs7Ozs7SUFDUUEsSSxtQkFBQUEsSTtJQUFNQyxLLG1CQUFBQSxLO0lBQU9DLEssbUJBQUFBLEs7O2tCQUVOO0FBQUEsTUFBQ0MsQ0FBRCx1RUFBRyxFQUFIO0FBQUEsTUFBT0MsQ0FBUCx1RUFBUyxFQUFUO0FBQUEsU0FDYkosS0FBSyxHQUFMLEVBQVVDLE1BQU1DLE1BQU0sR0FBTixFQUFXQyxDQUFYLENBQU4sRUFBcUJELE1BQU0sR0FBTixFQUFXRSxDQUFYLENBQXJCLENBQVYsQ0FEYTtBQUFBLEMiLCJmaWxlIjoiY29tYmluZS1zdHJpbmctbGlzdHMuanMiLCJzb3VyY2VSb290IjoiL2FwcC9zcmMvbGliIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFIgZnJvbSAncmFtZGEnXG5jb25zdCB7IGpvaW4sIHVuaW9uLCBzcGxpdCB9ID0gUlxuXG5leHBvcnQgZGVmYXVsdCAoYT0nJywgYj0nJykgPT5cbiAgam9pbignICcsIHVuaW9uKHNwbGl0KCcgJywgYSksIHNwbGl0KCcgJywgYikpKVxuIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "combine-string-lists.js"
+      ],
+      "names": [
+        "join",
+        "union",
+        "split",
+        "a",
+        "b"
+      ],
+      "mappings": ";;;;;;AAAA;;;;;;IACQA,I,mBAAAA,I;IAAMC,K,mBAAAA,K;IAAOC,K,mBAAAA,K;;kBAEN;AAAA,MAACC,CAAD,uEAAG,EAAH;AAAA,MAAOC,CAAP,uEAAS,EAAT;AAAA,SACbJ,KAAK,GAAL,EAAUC,MAAMC,MAAM,GAAN,EAAWC,CAAX,CAAN,EAAqBD,MAAM,GAAN,EAAWE,CAAX,CAArB,CAAV,CADa;AAAA,C",
+      "file": "combine-string-lists.js",
+      "sourceRoot": "/app/src/lib",
+      "sourcesContent": [
+        "import R from 'ramda'\nconst { join, union, split } = R\n\nexport default (a='', b='') =>\n  join(' ', union(split(' ', a), split(' ', b)))\n"
+      ]
+    },
+    "mtime": 1502632005702
+  },
+  "{\"filename\":\"/app/src/header/test.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/header\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "tape",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "test"
+              }
+            ]
+          },
+          {
+            "source": "enzyme",
+            "imported": [
+              "shallow"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "shallow",
+                "local": "shallow"
+              }
+            ]
+          },
+          {
+            "source": "./",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "Header"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/header/test.js",
+      "filenameRelative": "/app/src/header/test.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "test.js",
+      "sourceFileName": "test.js",
+      "sourceRoot": "/app/src/header",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/header",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "test"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _tape = require('tape');\n\nvar _tape2 = _interopRequireDefault(_tape);\n\nvar _enzyme = require('enzyme');\n\nvar _ = require('./');\n\nvar _2 = _interopRequireDefault(_);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Center = _2.default.Center,\n    Left = _2.default.Left,\n    Right = _2.default.Right;\n\n\n(0, _tape2.default)('<Header />', function (t) {\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(\n    _2.default,\n    null,\n    _react2.default.createElement(\n      Center,\n      null,\n      _react2.default.createElement(\n        'h1',\n        null,\n        'Title'\n      )\n    )\n  ));\n  t.ok(wrapper.contains(_react2.default.createElement(\n    'h1',\n    null,\n    'Title'\n  )));\n  t.end();\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QuanMiXSwibmFtZXMiOlsiQ2VudGVyIiwiTGVmdCIsIlJpZ2h0Iiwid3JhcHBlciIsInQiLCJvayIsImNvbnRhaW5zIiwiZW5kIl0sIm1hcHBpbmdzIjoiOztBQUFBOzs7O0FBQ0E7Ozs7QUFDQTs7QUFDQTs7Ozs7O0lBRVFBLE0sY0FBQUEsTTtJQUFRQyxJLGNBQUFBLEk7SUFBTUMsSyxjQUFBQSxLOzs7QUFFdEIsb0JBQUssWUFBTCxFQUFtQixhQUFLO0FBQ3RCLE1BQU1DLFVBQVUscUJBQVE7QUFBQTtBQUFBO0FBQVE7QUFBQyxZQUFEO0FBQUE7QUFBUTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQVI7QUFBUixHQUFSLENBQWhCO0FBQ0FDLElBQUVDLEVBQUYsQ0FBS0YsUUFBUUcsUUFBUixDQUFpQjtBQUFBO0FBQUE7QUFBQTtBQUFBLEdBQWpCLENBQUw7QUFDQUYsSUFBRUcsR0FBRjtBQUNELENBSkQiLCJmaWxlIjoidGVzdC5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL3NyYy9oZWFkZXIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgdGVzdCBmcm9tICd0YXBlJ1xuaW1wb3J0IHsgc2hhbGxvdyB9IGZyb20gJ2VuenltZSdcbmltcG9ydCBIZWFkZXIgZnJvbSAnLi8nXG5cbmNvbnN0IHsgQ2VudGVyLCBMZWZ0LCBSaWdodCB9ID0gSGVhZGVyXG5cbnRlc3QoJzxIZWFkZXIgLz4nLCB0ID0+IHtcbiAgY29uc3Qgd3JhcHBlciA9IHNoYWxsb3coPEhlYWRlcj48Q2VudGVyPjxoMT5UaXRsZTwvaDE+PC9DZW50ZXI+PC9IZWFkZXI+KVxuICB0Lm9rKHdyYXBwZXIuY29udGFpbnMoPGgxPlRpdGxlPC9oMT4pKVxuICB0LmVuZCgpXG59KVxuIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "test.js"
+      ],
+      "names": [
+        "Center",
+        "Left",
+        "Right",
+        "wrapper",
+        "t",
+        "ok",
+        "contains",
+        "end"
+      ],
+      "mappings": ";;AAAA;;;;AACA;;;;AACA;;AACA;;;;;;IAEQA,M,cAAAA,M;IAAQC,I,cAAAA,I;IAAMC,K,cAAAA,K;;;AAEtB,oBAAK,YAAL,EAAmB,aAAK;AACtB,MAAMC,UAAU,qBAAQ;AAAA;AAAA;AAAQ;AAAC,YAAD;AAAA;AAAQ;AAAA;AAAA;AAAA;AAAA;AAAR;AAAR,GAAR,CAAhB;AACAC,IAAEC,EAAF,CAAKF,QAAQG,QAAR,CAAiB;AAAA;AAAA;AAAA;AAAA,GAAjB,CAAL;AACAF,IAAEG,GAAF;AACD,CAJD",
+      "file": "test.js",
+      "sourceRoot": "/app/src/header",
+      "sourcesContent": [
+        "import React from 'react'\nimport test from 'tape'\nimport { shallow } from 'enzyme'\nimport Header from './'\n\nconst { Center, Left, Right } = Header\n\ntest('<Header />', t => {\n  const wrapper = shallow(<Header><Center><h1>Title</h1></Center></Header>)\n  t.ok(wrapper.contains(<h1>Title</h1>))\n  t.end()\n})\n"
+      ]
+    },
+    "mtime": 1502635993621
+  },
+  "{\"filename\":\"/app/src/header/index.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/header\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "extends",
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "ramda",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "R"
+              }
+            ]
+          },
+          {
+            "source": "../lib/combine-string-lists",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "combine"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/header/index.js",
+      "filenameRelative": "/app/src/header/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/src/header",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/header",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _ramda = require('ramda');\n\nvar _ramda2 = _interopRequireDefault(_ramda);\n\nvar _combineStringLists = require('../lib/combine-string-lists');\n\nvar _combineStringLists2 = _interopRequireDefault(_combineStringLists);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar find = _ramda2.default.find,\n    propEq = _ramda2.default.propEq,\n    omit = _ramda2.default.omit;\n\n\nvar Header = function Header(props) {\n  var className = (0, _combineStringLists2.default)('flex items-center justify-between h3', props.className);\n  var headerProps = omit(['className'], props);\n\n  return _react2.default.createElement(\n    'header',\n    _extends({ className: className }, headerProps),\n    find(propEq('type', Header.Left), props.children) || _react2.default.createElement(Header.Left, null),\n    props.children.length ? find(propEq('type', Header.Center), props.children) : props.children || _react2.default.createElement(Header.Center, null),\n    find(propEq('type', Header.Right), props.children) || _react2.default.createElement(Header.Right, null)\n  );\n};\n\nHeader.Center = function (props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    props.children\n  );\n};\n\nHeader.Left = function (props) {\n  return _react2.default.createElement(\n    'div',\n    { className: 'ml2 w2' },\n    props.children\n  );\n};\n\nHeader.Right = function (props) {\n  return _react2.default.createElement(\n    'div',\n    { className: 'mr2 w2' },\n    props.children\n  );\n};\n\nexports.default = Header;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImZpbmQiLCJwcm9wRXEiLCJvbWl0IiwiSGVhZGVyIiwiY2xhc3NOYW1lIiwicHJvcHMiLCJoZWFkZXJQcm9wcyIsIkxlZnQiLCJjaGlsZHJlbiIsImxlbmd0aCIsIkNlbnRlciIsIlJpZ2h0Il0sIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUFBOzs7O0FBQ0E7Ozs7QUFDQTs7Ozs7O0lBRVFBLEksbUJBQUFBLEk7SUFBTUMsTSxtQkFBQUEsTTtJQUFRQyxJLG1CQUFBQSxJOzs7QUFFdEIsSUFBTUMsU0FBUyxTQUFUQSxNQUFTLFFBQVM7QUFDdEIsTUFBTUMsWUFBWSxrQ0FBUSxzQ0FBUixFQUFnREMsTUFBTUQsU0FBdEQsQ0FBbEI7QUFDQSxNQUFNRSxjQUFjSixLQUFLLENBQUMsV0FBRCxDQUFMLEVBQW9CRyxLQUFwQixDQUFwQjs7QUFFQSxTQUNFO0FBQUE7QUFBQSxlQUFRLFdBQVdELFNBQW5CLElBQWtDRSxXQUFsQztBQUNHTixTQUFLQyxPQUFPLE1BQVAsRUFBZUUsT0FBT0ksSUFBdEIsQ0FBTCxFQUFrQ0YsTUFBTUcsUUFBeEMsS0FBcUQsOEJBQUMsTUFBRCxDQUFRLElBQVIsT0FEeEQ7QUFFR0gsVUFBTUcsUUFBTixDQUFlQyxNQUFmLEdBQXdCVCxLQUFLQyxPQUFPLE1BQVAsRUFBZUUsT0FBT08sTUFBdEIsQ0FBTCxFQUFvQ0wsTUFBTUcsUUFBMUMsQ0FBeEIsR0FBK0VILE1BQU1HLFFBQU4sSUFBa0IsOEJBQUMsTUFBRCxDQUFRLE1BQVIsT0FGcEc7QUFHR1IsU0FBS0MsT0FBTyxNQUFQLEVBQWVFLE9BQU9RLEtBQXRCLENBQUwsRUFBbUNOLE1BQU1HLFFBQXpDLEtBQXNELDhCQUFDLE1BQUQsQ0FBUSxLQUFSO0FBSHpELEdBREY7QUFPRCxDQVhEOztBQWNBTCxPQUFPTyxNQUFQLEdBQWdCO0FBQUEsU0FDZDtBQUFBO0FBQUE7QUFBTUwsVUFBTUc7QUFBWixHQURjO0FBQUEsQ0FBaEI7O0FBR0FMLE9BQU9JLElBQVAsR0FBYztBQUFBLFNBQ1o7QUFBQTtBQUFBLE1BQUssV0FBVSxRQUFmO0FBQXlCRixVQUFNRztBQUEvQixHQURZO0FBQUEsQ0FBZDs7QUFHQUwsT0FBT1EsS0FBUCxHQUFlO0FBQUEsU0FDYjtBQUFBO0FBQUEsTUFBSyxXQUFVLFFBQWY7QUFBeUJOLFVBQU1HO0FBQS9CLEdBRGE7QUFBQSxDQUFmOztrQkFHZUwsTSIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL3NyYy9oZWFkZXIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgUiBmcm9tICdyYW1kYSdcbmltcG9ydCBjb21iaW5lIGZyb20gJy4uL2xpYi9jb21iaW5lLXN0cmluZy1saXN0cydcblxuY29uc3QgeyBmaW5kLCBwcm9wRXEsIG9taXQgfSA9IFJcblxuY29uc3QgSGVhZGVyID0gcHJvcHMgPT4ge1xuICBjb25zdCBjbGFzc05hbWUgPSBjb21iaW5lKCdmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gaDMnLCBwcm9wcy5jbGFzc05hbWUpXG4gIGNvbnN0IGhlYWRlclByb3BzID0gb21pdChbJ2NsYXNzTmFtZSddLCBwcm9wcylcbiAgXG4gIHJldHVybiAoXG4gICAgPGhlYWRlciBjbGFzc05hbWU9e2NsYXNzTmFtZX0gey4uLmhlYWRlclByb3BzfSA+XG4gICAgICB7ZmluZChwcm9wRXEoJ3R5cGUnLCBIZWFkZXIuTGVmdCksIHByb3BzLmNoaWxkcmVuKSB8fCA8SGVhZGVyLkxlZnQgLz4gfVxuICAgICAge3Byb3BzLmNoaWxkcmVuLmxlbmd0aCA/IGZpbmQocHJvcEVxKCd0eXBlJywgSGVhZGVyLkNlbnRlciksIHByb3BzLmNoaWxkcmVuKSA6IChwcm9wcy5jaGlsZHJlbiB8fCA8SGVhZGVyLkNlbnRlciAvPikgfVxuICAgICAge2ZpbmQocHJvcEVxKCd0eXBlJywgSGVhZGVyLlJpZ2h0KSwgcHJvcHMuY2hpbGRyZW4pIHx8IDxIZWFkZXIuUmlnaHQgLz59XG4gICAgPC9oZWFkZXI+XG4gIClcbn1cbiAgXG5cbkhlYWRlci5DZW50ZXIgPSBwcm9wcyA9PiBcbiAgPGRpdj57cHJvcHMuY2hpbGRyZW59PC9kaXY+XG5cbkhlYWRlci5MZWZ0ID0gcHJvcHMgPT4gXG4gIDxkaXYgY2xhc3NOYW1lPVwibWwyIHcyXCI+e3Byb3BzLmNoaWxkcmVufTwvZGl2PlxuICAgICAgICAgICAgXG5IZWFkZXIuUmlnaHQgPSBwcm9wcyA9PiBcbiAgPGRpdiBjbGFzc05hbWU9XCJtcjIgdzJcIj57cHJvcHMuY2hpbGRyZW59PC9kaXY+XG5cbmV4cG9ydCBkZWZhdWx0IEhlYWRlciJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "find",
+        "propEq",
+        "omit",
+        "Header",
+        "className",
+        "props",
+        "headerProps",
+        "Left",
+        "children",
+        "length",
+        "Center",
+        "Right"
+      ],
+      "mappings": ";;;;;;;;AAAA;;;;AACA;;;;AACA;;;;;;IAEQA,I,mBAAAA,I;IAAMC,M,mBAAAA,M;IAAQC,I,mBAAAA,I;;;AAEtB,IAAMC,SAAS,SAATA,MAAS,QAAS;AACtB,MAAMC,YAAY,kCAAQ,sCAAR,EAAgDC,MAAMD,SAAtD,CAAlB;AACA,MAAME,cAAcJ,KAAK,CAAC,WAAD,CAAL,EAAoBG,KAApB,CAApB;;AAEA,SACE;AAAA;AAAA,eAAQ,WAAWD,SAAnB,IAAkCE,WAAlC;AACGN,SAAKC,OAAO,MAAP,EAAeE,OAAOI,IAAtB,CAAL,EAAkCF,MAAMG,QAAxC,KAAqD,8BAAC,MAAD,CAAQ,IAAR,OADxD;AAEGH,UAAMG,QAAN,CAAeC,MAAf,GAAwBT,KAAKC,OAAO,MAAP,EAAeE,OAAOO,MAAtB,CAAL,EAAoCL,MAAMG,QAA1C,CAAxB,GAA+EH,MAAMG,QAAN,IAAkB,8BAAC,MAAD,CAAQ,MAAR,OAFpG;AAGGR,SAAKC,OAAO,MAAP,EAAeE,OAAOQ,KAAtB,CAAL,EAAmCN,MAAMG,QAAzC,KAAsD,8BAAC,MAAD,CAAQ,KAAR;AAHzD,GADF;AAOD,CAXD;;AAcAL,OAAOO,MAAP,GAAgB;AAAA,SACd;AAAA;AAAA;AAAML,UAAMG;AAAZ,GADc;AAAA,CAAhB;;AAGAL,OAAOI,IAAP,GAAc;AAAA,SACZ;AAAA;AAAA,MAAK,WAAU,QAAf;AAAyBF,UAAMG;AAA/B,GADY;AAAA,CAAd;;AAGAL,OAAOQ,KAAP,GAAe;AAAA,SACb;AAAA;AAAA,MAAK,WAAU,QAAf;AAAyBN,UAAMG;AAA/B,GADa;AAAA,CAAf;;kBAGeL,M",
+      "file": "index.js",
+      "sourceRoot": "/app/src/header",
+      "sourcesContent": [
+        "import React from 'react'\nimport R from 'ramda'\nimport combine from '../lib/combine-string-lists'\n\nconst { find, propEq, omit } = R\n\nconst Header = props => {\n  const className = combine('flex items-center justify-between h3', props.className)\n  const headerProps = omit(['className'], props)\n  \n  return (\n    <header className={className} {...headerProps} >\n      {find(propEq('type', Header.Left), props.children) || <Header.Left /> }\n      {props.children.length ? find(propEq('type', Header.Center), props.children) : (props.children || <Header.Center />) }\n      {find(propEq('type', Header.Right), props.children) || <Header.Right />}\n    </header>\n  )\n}\n  \n\nHeader.Center = props => \n  <div>{props.children}</div>\n\nHeader.Left = props => \n  <div className=\"ml2 w2\">{props.children}</div>\n            \nHeader.Right = props => \n  <div className=\"mr2 w2\">{props.children}</div>\n\nexport default Header"
+      ]
+    },
+    "mtime": 1502636073126
+  },
+  "{\"filename\":\"/app/src/list-item/test.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/list-item\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "tape",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "test"
+              }
+            ]
+          },
+          {
+            "source": "enzyme",
+            "imported": [
+              "shallow"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "shallow",
+                "local": "shallow"
+              }
+            ]
+          },
+          {
+            "source": "./",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "ListItem"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/list-item/test.js",
+      "filenameRelative": "/app/src/list-item/test.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "test.js",
+      "sourceFileName": "test.js",
+      "sourceRoot": "/app/src/list-item",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/list-item",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "test"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _tape = require('tape');\n\nvar _tape2 = _interopRequireDefault(_tape);\n\nvar _enzyme = require('enzyme');\n\nvar _ = require('./');\n\nvar _2 = _interopRequireDefault(_);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _tape2.default)('<ListItem />', function (t) {\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(\n    _2.default,\n    null,\n    'Beep'\n  ));\n  t.equals(wrapper.text(), 'Beep');\n  t.end();\n});\n\n(0, _tape2.default)('<ListItem className />', function (t) {\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(\n    _2.default,\n    { className: 'green' },\n    'Beep'\n  ));\n  t.equals(wrapper.props().className, 'flex items-center lh-copy pa3 ph0-l bb b--black-10 green');\n  t.end();\n});\n\n(0, _tape2.default)('<ListItem left />', function (t) {\n  var img = _react2.default.createElement('img', { alt: 'bill murray', src: 'http://www.fillmurray.com/300/300' });\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(\n    _2.default,\n    { left: img },\n    'Beep'\n  ));\n  t.ok(wrapper.contains(img));\n  t.end();\n});\n\n(0, _tape2.default)('<ListItem right />', function (t) {\n  var img = _react2.default.createElement('img', { alt: 'bill murray', src: 'http://www.fillmurray.com/300/300' });\n  var button = _react2.default.createElement(\n    'button',\n    null,\n    'Click'\n  );\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(\n    _2.default,\n    { right: button },\n    'Beep'\n  ));\n  t.ok(wrapper.contains(button));\n  t.ok(!wrapper.contains(img));\n  t.end();\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QuanMiXSwibmFtZXMiOlsid3JhcHBlciIsInQiLCJlcXVhbHMiLCJ0ZXh0IiwiZW5kIiwicHJvcHMiLCJjbGFzc05hbWUiLCJpbWciLCJvayIsImNvbnRhaW5zIiwiYnV0dG9uIl0sIm1hcHBpbmdzIjoiOztBQUFBOzs7O0FBQ0E7Ozs7QUFDQTs7QUFDQTs7Ozs7O0FBRUEsb0JBQUssY0FBTCxFQUFxQixhQUFLO0FBQ3hCLE1BQU1BLFVBQVUscUJBQVE7QUFBQTtBQUFBO0FBQUE7QUFBQSxHQUFSLENBQWhCO0FBQ0FDLElBQUVDLE1BQUYsQ0FBU0YsUUFBUUcsSUFBUixFQUFULEVBQXlCLE1BQXpCO0FBQ0FGLElBQUVHLEdBQUY7QUFDRCxDQUpEOztBQU9BLG9CQUFLLHdCQUFMLEVBQStCLGFBQUs7QUFDbEMsTUFBTUosVUFBVSxxQkFBUTtBQUFBO0FBQUEsTUFBVSxXQUFVLE9BQXBCO0FBQUE7QUFBQSxHQUFSLENBQWhCO0FBQ0FDLElBQUVDLE1BQUYsQ0FBU0YsUUFBUUssS0FBUixHQUFnQkMsU0FBekIsRUFBb0MsMERBQXBDO0FBQ0FMLElBQUVHLEdBQUY7QUFDRCxDQUpEOztBQU1BLG9CQUFLLG1CQUFMLEVBQTBCLGFBQUs7QUFDN0IsTUFBTUcsTUFBTSx1Q0FBSyxLQUFJLGFBQVQsRUFBdUIsS0FBSSxtQ0FBM0IsR0FBWjtBQUNBLE1BQU1QLFVBQVUscUJBQVE7QUFBQTtBQUFBLE1BQVUsTUFBTU8sR0FBaEI7QUFBQTtBQUFBLEdBQVIsQ0FBaEI7QUFDQU4sSUFBRU8sRUFBRixDQUFLUixRQUFRUyxRQUFSLENBQWlCRixHQUFqQixDQUFMO0FBQ0FOLElBQUVHLEdBQUY7QUFDRCxDQUxEOztBQVFBLG9CQUFLLG9CQUFMLEVBQTJCLGFBQUs7QUFDOUIsTUFBTUcsTUFBTSx1Q0FBSyxLQUFJLGFBQVQsRUFBdUIsS0FBSSxtQ0FBM0IsR0FBWjtBQUNBLE1BQU1HLFNBQVM7QUFBQTtBQUFBO0FBQUE7QUFBQSxHQUFmO0FBQ0EsTUFBTVYsVUFBVSxxQkFBUTtBQUFBO0FBQUEsTUFBVSxPQUFPVSxNQUFqQjtBQUFBO0FBQUEsR0FBUixDQUFoQjtBQUNBVCxJQUFFTyxFQUFGLENBQUtSLFFBQVFTLFFBQVIsQ0FBaUJDLE1BQWpCLENBQUw7QUFDQVQsSUFBRU8sRUFBRixDQUFLLENBQUNSLFFBQVFTLFFBQVIsQ0FBaUJGLEdBQWpCLENBQU47QUFDQU4sSUFBRUcsR0FBRjtBQUNELENBUEQiLCJmaWxlIjoidGVzdC5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL3NyYy9saXN0LWl0ZW0iLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgdGVzdCBmcm9tICd0YXBlJ1xuaW1wb3J0IHsgc2hhbGxvdyB9IGZyb20gJ2VuenltZSdcbmltcG9ydCBMaXN0SXRlbSBmcm9tICcuLydcblxudGVzdCgnPExpc3RJdGVtIC8+JywgdCA9PiB7XG4gIGNvbnN0IHdyYXBwZXIgPSBzaGFsbG93KDxMaXN0SXRlbT5CZWVwPC9MaXN0SXRlbT4pXG4gIHQuZXF1YWxzKHdyYXBwZXIudGV4dCgpLCAnQmVlcCcpXG4gIHQuZW5kKClcbn0pXG5cblxudGVzdCgnPExpc3RJdGVtIGNsYXNzTmFtZSAvPicsIHQgPT4ge1xuICBjb25zdCB3cmFwcGVyID0gc2hhbGxvdyg8TGlzdEl0ZW0gY2xhc3NOYW1lPVwiZ3JlZW5cIj5CZWVwPC9MaXN0SXRlbT4pXG4gIHQuZXF1YWxzKHdyYXBwZXIucHJvcHMoKS5jbGFzc05hbWUsICdmbGV4IGl0ZW1zLWNlbnRlciBsaC1jb3B5IHBhMyBwaDAtbCBiYiBiLS1ibGFjay0xMCBncmVlbicpXG4gIHQuZW5kKClcbn0pXG5cbnRlc3QoJzxMaXN0SXRlbSBsZWZ0IC8+JywgdCA9PiB7XG4gIGNvbnN0IGltZyA9IDxpbWcgYWx0PVwiYmlsbCBtdXJyYXlcIiBzcmM9XCJodHRwOi8vd3d3LmZpbGxtdXJyYXkuY29tLzMwMC8zMDBcIiAvPlxuICBjb25zdCB3cmFwcGVyID0gc2hhbGxvdyg8TGlzdEl0ZW0gbGVmdD17aW1nfT5CZWVwPC9MaXN0SXRlbT4pXG4gIHQub2sod3JhcHBlci5jb250YWlucyhpbWcpKVxuICB0LmVuZCgpXG59KVxuXG5cbnRlc3QoJzxMaXN0SXRlbSByaWdodCAvPicsIHQgPT4ge1xuICBjb25zdCBpbWcgPSA8aW1nIGFsdD1cImJpbGwgbXVycmF5XCIgc3JjPVwiaHR0cDovL3d3dy5maWxsbXVycmF5LmNvbS8zMDAvMzAwXCIgLz5cbiAgY29uc3QgYnV0dG9uID0gPGJ1dHRvbj5DbGljazwvYnV0dG9uPlxuICBjb25zdCB3cmFwcGVyID0gc2hhbGxvdyg8TGlzdEl0ZW0gcmlnaHQ9e2J1dHRvbn0+QmVlcDwvTGlzdEl0ZW0+KVxuICB0Lm9rKHdyYXBwZXIuY29udGFpbnMoYnV0dG9uKSlcbiAgdC5vayghd3JhcHBlci5jb250YWlucyhpbWcpKVxuICB0LmVuZCgpXG59KVxuIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "test.js"
+      ],
+      "names": [
+        "wrapper",
+        "t",
+        "equals",
+        "text",
+        "end",
+        "props",
+        "className",
+        "img",
+        "ok",
+        "contains",
+        "button"
+      ],
+      "mappings": ";;AAAA;;;;AACA;;;;AACA;;AACA;;;;;;AAEA,oBAAK,cAAL,EAAqB,aAAK;AACxB,MAAMA,UAAU,qBAAQ;AAAA;AAAA;AAAA;AAAA,GAAR,CAAhB;AACAC,IAAEC,MAAF,CAASF,QAAQG,IAAR,EAAT,EAAyB,MAAzB;AACAF,IAAEG,GAAF;AACD,CAJD;;AAOA,oBAAK,wBAAL,EAA+B,aAAK;AAClC,MAAMJ,UAAU,qBAAQ;AAAA;AAAA,MAAU,WAAU,OAApB;AAAA;AAAA,GAAR,CAAhB;AACAC,IAAEC,MAAF,CAASF,QAAQK,KAAR,GAAgBC,SAAzB,EAAoC,0DAApC;AACAL,IAAEG,GAAF;AACD,CAJD;;AAMA,oBAAK,mBAAL,EAA0B,aAAK;AAC7B,MAAMG,MAAM,uCAAK,KAAI,aAAT,EAAuB,KAAI,mCAA3B,GAAZ;AACA,MAAMP,UAAU,qBAAQ;AAAA;AAAA,MAAU,MAAMO,GAAhB;AAAA;AAAA,GAAR,CAAhB;AACAN,IAAEO,EAAF,CAAKR,QAAQS,QAAR,CAAiBF,GAAjB,CAAL;AACAN,IAAEG,GAAF;AACD,CALD;;AAQA,oBAAK,oBAAL,EAA2B,aAAK;AAC9B,MAAMG,MAAM,uCAAK,KAAI,aAAT,EAAuB,KAAI,mCAA3B,GAAZ;AACA,MAAMG,SAAS;AAAA;AAAA;AAAA;AAAA,GAAf;AACA,MAAMV,UAAU,qBAAQ;AAAA;AAAA,MAAU,OAAOU,MAAjB;AAAA;AAAA,GAAR,CAAhB;AACAT,IAAEO,EAAF,CAAKR,QAAQS,QAAR,CAAiBC,MAAjB,CAAL;AACAT,IAAEO,EAAF,CAAK,CAACR,QAAQS,QAAR,CAAiBF,GAAjB,CAAN;AACAN,IAAEG,GAAF;AACD,CAPD",
+      "file": "test.js",
+      "sourceRoot": "/app/src/list-item",
+      "sourcesContent": [
+        "import React from 'react'\nimport test from 'tape'\nimport { shallow } from 'enzyme'\nimport ListItem from './'\n\ntest('<ListItem />', t => {\n  const wrapper = shallow(<ListItem>Beep</ListItem>)\n  t.equals(wrapper.text(), 'Beep')\n  t.end()\n})\n\n\ntest('<ListItem className />', t => {\n  const wrapper = shallow(<ListItem className=\"green\">Beep</ListItem>)\n  t.equals(wrapper.props().className, 'flex items-center lh-copy pa3 ph0-l bb b--black-10 green')\n  t.end()\n})\n\ntest('<ListItem left />', t => {\n  const img = <img alt=\"bill murray\" src=\"http://www.fillmurray.com/300/300\" />\n  const wrapper = shallow(<ListItem left={img}>Beep</ListItem>)\n  t.ok(wrapper.contains(img))\n  t.end()\n})\n\n\ntest('<ListItem right />', t => {\n  const img = <img alt=\"bill murray\" src=\"http://www.fillmurray.com/300/300\" />\n  const button = <button>Click</button>\n  const wrapper = shallow(<ListItem right={button}>Beep</ListItem>)\n  t.ok(wrapper.contains(button))\n  t.ok(!wrapper.contains(img))\n  t.end()\n})\n"
+      ]
+    },
+    "mtime": 1502632005738
+  },
+  "{\"filename\":\"/app/src/list-item/index.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/list-item\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "ramda",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "R"
+              }
+            ]
+          },
+          {
+            "source": "../lib/combine-string-lists",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "combine"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/list-item/index.js",
+      "filenameRelative": "/app/src/list-item/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/src/list-item",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/list-item",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _ramda = require('ramda');\n\nvar _ramda2 = _interopRequireDefault(_ramda);\n\nvar _combineStringLists = require('../lib/combine-string-lists');\n\nvar _combineStringLists2 = _interopRequireDefault(_combineStringLists);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar ListItem = function ListItem(props) {\n  var className = (0, _combineStringLists2.default)(\"flex items-center lh-copy pa3 ph0-l bb b--black-10\", props.className);\n  var newProps = _ramda2.default.merge(_ramda2.default.omit(['left', 'right'], props), { className: className });\n\n  return _react2.default.createElement(\n    'li',\n    newProps,\n    props.left && props.left,\n    _react2.default.createElement(\n      'div',\n      { className: 'pl3 flex-auto' },\n      props.children\n    ),\n    props.right && _react2.default.createElement(\n      'div',\n      null,\n      props.right\n    )\n  );\n};\n\nexports.default = ListItem;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbIkxpc3RJdGVtIiwiY2xhc3NOYW1lIiwicHJvcHMiLCJuZXdQcm9wcyIsIm1lcmdlIiwib21pdCIsImxlZnQiLCJjaGlsZHJlbiIsInJpZ2h0Il0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQTs7OztBQUNBOzs7O0FBQ0E7Ozs7OztBQUVBLElBQU1BLFdBQVcsU0FBWEEsUUFBVyxRQUFTO0FBQ3hCLE1BQU1DLFlBQVksa0NBQ2Ysb0RBRGUsRUFFZkMsTUFBTUQsU0FGUyxDQUFsQjtBQUdBLE1BQU1FLFdBQVcsZ0JBQUVDLEtBQUYsQ0FBUSxnQkFBRUMsSUFBRixDQUFPLENBQUMsTUFBRCxFQUFTLE9BQVQsQ0FBUCxFQUEwQkgsS0FBMUIsQ0FBUixFQUEwQyxFQUFFRCxXQUFXQSxTQUFiLEVBQTFDLENBQWpCOztBQUVBLFNBQ0U7QUFBQTtBQUFRRSxZQUFSO0FBQ0dELFVBQU1JLElBQU4sSUFBY0osTUFBTUksSUFEdkI7QUFFRTtBQUFBO0FBQUEsUUFBSyxXQUFVLGVBQWY7QUFDR0osWUFBTUs7QUFEVCxLQUZGO0FBS0dMLFVBQU1NLEtBQU4sSUFBZTtBQUFBO0FBQUE7QUFBTU4sWUFBTU07QUFBWjtBQUxsQixHQURGO0FBU0QsQ0FmRDs7a0JBaUJlUixRIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlUm9vdCI6Ii9hcHAvc3JjL2xpc3QtaXRlbSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCBSIGZyb20gJ3JhbWRhJ1xuaW1wb3J0IGNvbWJpbmUgZnJvbSAnLi4vbGliL2NvbWJpbmUtc3RyaW5nLWxpc3RzJ1xuXG5jb25zdCBMaXN0SXRlbSA9IHByb3BzID0+IHtcbiAgY29uc3QgY2xhc3NOYW1lID0gY29tYmluZShcbiAgICAgXCJmbGV4IGl0ZW1zLWNlbnRlciBsaC1jb3B5IHBhMyBwaDAtbCBiYiBiLS1ibGFjay0xMFwiLFxuICAgICBwcm9wcy5jbGFzc05hbWUpXG4gIGNvbnN0IG5ld1Byb3BzID0gUi5tZXJnZShSLm9taXQoWydsZWZ0JywgJ3JpZ2h0J10sIHByb3BzKSwgeyBjbGFzc05hbWU6IGNsYXNzTmFtZSB9KVxuXG4gIHJldHVybiAoXG4gICAgPGxpIHsuLi5uZXdQcm9wc30+XG4gICAgICB7cHJvcHMubGVmdCAmJiBwcm9wcy5sZWZ0fVxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJwbDMgZmxleC1hdXRvXCI+XG4gICAgICAgIHtwcm9wcy5jaGlsZHJlbn1cbiAgICAgIDwvZGl2PlxuICAgICAge3Byb3BzLnJpZ2h0ICYmIDxkaXY+e3Byb3BzLnJpZ2h0fTwvZGl2Pn1cbiAgICA8L2xpPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IExpc3RJdGVtXG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "ListItem",
+        "className",
+        "props",
+        "newProps",
+        "merge",
+        "omit",
+        "left",
+        "children",
+        "right"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;AACA;;;;;;AAEA,IAAMA,WAAW,SAAXA,QAAW,QAAS;AACxB,MAAMC,YAAY,kCACf,oDADe,EAEfC,MAAMD,SAFS,CAAlB;AAGA,MAAME,WAAW,gBAAEC,KAAF,CAAQ,gBAAEC,IAAF,CAAO,CAAC,MAAD,EAAS,OAAT,CAAP,EAA0BH,KAA1B,CAAR,EAA0C,EAAED,WAAWA,SAAb,EAA1C,CAAjB;;AAEA,SACE;AAAA;AAAQE,YAAR;AACGD,UAAMI,IAAN,IAAcJ,MAAMI,IADvB;AAEE;AAAA;AAAA,QAAK,WAAU,eAAf;AACGJ,YAAMK;AADT,KAFF;AAKGL,UAAMM,KAAN,IAAe;AAAA;AAAA;AAAMN,YAAMM;AAAZ;AALlB,GADF;AASD,CAfD;;kBAiBeR,Q",
+      "file": "index.js",
+      "sourceRoot": "/app/src/list-item",
+      "sourcesContent": [
+        "import React from 'react'\nimport R from 'ramda'\nimport combine from '../lib/combine-string-lists'\n\nconst ListItem = props => {\n  const className = combine(\n     \"flex items-center lh-copy pa3 ph0-l bb b--black-10\",\n     props.className)\n  const newProps = R.merge(R.omit(['left', 'right'], props), { className: className })\n\n  return (\n    <li {...newProps}>\n      {props.left && props.left}\n      <div className=\"pl3 flex-auto\">\n        {props.children}\n      </div>\n      {props.right && <div>{props.right}</div>}\n    </li>\n  )\n}\n\nexport default ListItem\n"
+      ]
+    },
+    "mtime": 1502632005734
+  },
+  "{\"filename\":\"/app/src/list/test.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/list\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "tape",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "test"
+              }
+            ]
+          },
+          {
+            "source": "enzyme",
+            "imported": [
+              "shallow"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "shallow",
+                "local": "shallow"
+              }
+            ]
+          },
+          {
+            "source": "./",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "List"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/list/test.js",
+      "filenameRelative": "/app/src/list/test.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "test.js",
+      "sourceFileName": "test.js",
+      "sourceRoot": "/app/src/list",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/list",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "test"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _tape = require('tape');\n\nvar _tape2 = _interopRequireDefault(_tape);\n\nvar _enzyme = require('enzyme');\n\nvar _ = require('./');\n\nvar _2 = _interopRequireDefault(_);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _tape2.default)('<List />', function (t) {\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(\n    _2.default,\n    null,\n    _react2.default.createElement(\n      'li',\n      null,\n      '1'\n    )\n  ));\n  t.ok(wrapper.contains(_react2.default.createElement(\n    'li',\n    null,\n    '1'\n  )));\n  t.end();\n});\n\n(0, _tape2.default)('<List className />', function (t) {\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(\n    _2.default,\n    { className: 'green' },\n    _react2.default.createElement(\n      'li',\n      null,\n      '1'\n    )\n  ));\n  t.equals(wrapper.props().className, 'list pl0 mt0 measure center green');\n  t.end();\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QuanMiXSwibmFtZXMiOlsid3JhcHBlciIsInQiLCJvayIsImNvbnRhaW5zIiwiZW5kIiwiZXF1YWxzIiwicHJvcHMiLCJjbGFzc05hbWUiXSwibWFwcGluZ3MiOiI7O0FBQUE7Ozs7QUFDQTs7OztBQUNBOztBQUNBOzs7Ozs7QUFFQSxvQkFBSyxVQUFMLEVBQWlCLGFBQUs7QUFDcEIsTUFBTUEsVUFBVSxxQkFBUTtBQUFBO0FBQUE7QUFBTTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQU4sR0FBUixDQUFoQjtBQUNBQyxJQUFFQyxFQUFGLENBQUtGLFFBQVFHLFFBQVIsQ0FBaUI7QUFBQTtBQUFBO0FBQUE7QUFBQSxHQUFqQixDQUFMO0FBQ0FGLElBQUVHLEdBQUY7QUFDRCxDQUpEOztBQU1BLG9CQUFLLG9CQUFMLEVBQTJCLGFBQUs7QUFDOUIsTUFBTUosVUFBVSxxQkFBUTtBQUFBO0FBQUEsTUFBTSxXQUFVLE9BQWhCO0FBQXdCO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBeEIsR0FBUixDQUFoQjtBQUNBQyxJQUFFSSxNQUFGLENBQVNMLFFBQVFNLEtBQVIsR0FBZ0JDLFNBQXpCLEVBQW9DLG1DQUFwQztBQUNBTixJQUFFRyxHQUFGO0FBRUQsQ0FMRCIsImZpbGUiOiJ0ZXN0LmpzIiwic291cmNlUm9vdCI6Ii9hcHAvc3JjL2xpc3QiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgdGVzdCBmcm9tICd0YXBlJ1xuaW1wb3J0IHsgc2hhbGxvdyB9IGZyb20gJ2VuenltZSdcbmltcG9ydCBMaXN0IGZyb20gJy4vJ1xuXG50ZXN0KCc8TGlzdCAvPicsIHQgPT4ge1xuICBjb25zdCB3cmFwcGVyID0gc2hhbGxvdyg8TGlzdD48bGk+MTwvbGk+PC9MaXN0PilcbiAgdC5vayh3cmFwcGVyLmNvbnRhaW5zKDxsaT4xPC9saT4pKVxuICB0LmVuZCgpXG59KVxuXG50ZXN0KCc8TGlzdCBjbGFzc05hbWUgLz4nLCB0ID0+IHtcbiAgY29uc3Qgd3JhcHBlciA9IHNoYWxsb3coPExpc3QgY2xhc3NOYW1lPVwiZ3JlZW5cIj48bGk+MTwvbGk+PC9MaXN0PilcbiAgdC5lcXVhbHMod3JhcHBlci5wcm9wcygpLmNsYXNzTmFtZSwgJ2xpc3QgcGwwIG10MCBtZWFzdXJlIGNlbnRlciBncmVlbicpXG4gIHQuZW5kKClcblxufSlcbiJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "test.js"
+      ],
+      "names": [
+        "wrapper",
+        "t",
+        "ok",
+        "contains",
+        "end",
+        "equals",
+        "props",
+        "className"
+      ],
+      "mappings": ";;AAAA;;;;AACA;;;;AACA;;AACA;;;;;;AAEA,oBAAK,UAAL,EAAiB,aAAK;AACpB,MAAMA,UAAU,qBAAQ;AAAA;AAAA;AAAM;AAAA;AAAA;AAAA;AAAA;AAAN,GAAR,CAAhB;AACAC,IAAEC,EAAF,CAAKF,QAAQG,QAAR,CAAiB;AAAA;AAAA;AAAA;AAAA,GAAjB,CAAL;AACAF,IAAEG,GAAF;AACD,CAJD;;AAMA,oBAAK,oBAAL,EAA2B,aAAK;AAC9B,MAAMJ,UAAU,qBAAQ;AAAA;AAAA,MAAM,WAAU,OAAhB;AAAwB;AAAA;AAAA;AAAA;AAAA;AAAxB,GAAR,CAAhB;AACAC,IAAEI,MAAF,CAASL,QAAQM,KAAR,GAAgBC,SAAzB,EAAoC,mCAApC;AACAN,IAAEG,GAAF;AAED,CALD",
+      "file": "test.js",
+      "sourceRoot": "/app/src/list",
+      "sourcesContent": [
+        "import React from 'react'\nimport test from 'tape'\nimport { shallow } from 'enzyme'\nimport List from './'\n\ntest('<List />', t => {\n  const wrapper = shallow(<List><li>1</li></List>)\n  t.ok(wrapper.contains(<li>1</li>))\n  t.end()\n})\n\ntest('<List className />', t => {\n  const wrapper = shallow(<List className=\"green\"><li>1</li></List>)\n  t.equals(wrapper.props().className, 'list pl0 mt0 measure center green')\n  t.end()\n\n})\n"
+      ]
+    },
+    "mtime": 1502632005718
+  },
+  "{\"filename\":\"/app/src/list/index.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/list\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "ramda",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "R"
+              }
+            ]
+          },
+          {
+            "source": "../lib/combine-string-lists",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "combine"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/list/index.js",
+      "filenameRelative": "/app/src/list/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/src/list",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/list",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _ramda = require('ramda');\n\nvar _ramda2 = _interopRequireDefault(_ramda);\n\nvar _combineStringLists = require('../lib/combine-string-lists');\n\nvar _combineStringLists2 = _interopRequireDefault(_combineStringLists);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = function (props) {\n  var className = (0, _combineStringLists2.default)(\"list pl0 mt0 measure center\", props.className);\n  var newProps = _ramda2.default.merge(props, { className: className });\n\n  return _react2.default.createElement(\n    'ul',\n    newProps,\n    props.children\n  );\n};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImNsYXNzTmFtZSIsInByb3BzIiwibmV3UHJvcHMiLCJtZXJnZSIsImNoaWxkcmVuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQTs7OztBQUNBOzs7O0FBQ0E7Ozs7OztrQkFFZSxpQkFBUztBQUN0QixNQUFNQSxZQUFZLGtDQUNmLDZCQURlLEVBRWZDLE1BQU1ELFNBRlMsQ0FBbEI7QUFHQSxNQUFNRSxXQUFXLGdCQUFFQyxLQUFGLENBQVFGLEtBQVIsRUFBZSxFQUFFRCxXQUFXQSxTQUFiLEVBQWYsQ0FBakI7O0FBRUEsU0FDRTtBQUFBO0FBQVFFLFlBQVI7QUFBbUJELFVBQU1HO0FBQXpCLEdBREY7QUFHRCxDIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlUm9vdCI6Ii9hcHAvc3JjL2xpc3QiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgUiBmcm9tICdyYW1kYSdcbmltcG9ydCBjb21iaW5lIGZyb20gJy4uL2xpYi9jb21iaW5lLXN0cmluZy1saXN0cydcblxuZXhwb3J0IGRlZmF1bHQgcHJvcHMgPT4ge1xuICBjb25zdCBjbGFzc05hbWUgPSBjb21iaW5lKFxuICAgICBcImxpc3QgcGwwIG10MCBtZWFzdXJlIGNlbnRlclwiLFxuICAgICBwcm9wcy5jbGFzc05hbWUpXG4gIGNvbnN0IG5ld1Byb3BzID0gUi5tZXJnZShwcm9wcywgeyBjbGFzc05hbWU6IGNsYXNzTmFtZSB9KVxuXG4gIHJldHVybiAoXG4gICAgPHVsIHsuLi5uZXdQcm9wc30+e3Byb3BzLmNoaWxkcmVufTwvdWw+XG4gIClcbn1cbiJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "className",
+        "props",
+        "newProps",
+        "merge",
+        "children"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;AACA;;;;;;kBAEe,iBAAS;AACtB,MAAMA,YAAY,kCACf,6BADe,EAEfC,MAAMD,SAFS,CAAlB;AAGA,MAAME,WAAW,gBAAEC,KAAF,CAAQF,KAAR,EAAe,EAAED,WAAWA,SAAb,EAAf,CAAjB;;AAEA,SACE;AAAA;AAAQE,YAAR;AAAmBD,UAAMG;AAAzB,GADF;AAGD,C",
+      "file": "index.js",
+      "sourceRoot": "/app/src/list",
+      "sourcesContent": [
+        "import React from 'react'\nimport R from 'ramda'\nimport combine from '../lib/combine-string-lists'\n\nexport default props => {\n  const className = combine(\n     \"list pl0 mt0 measure center\",\n     props.className)\n  const newProps = R.merge(props, { className: className })\n\n  return (\n    <ul {...newProps}>{props.children}</ul>\n  )\n}\n"
+      ]
+    },
+    "mtime": 1502632005710
+  },
+  "{\"filename\":\"/app/src/text-area/test.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/text-area\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "tape",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "test"
+              }
+            ]
+          },
+          {
+            "source": "enzyme",
+            "imported": [
+              "shallow"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "shallow",
+                "local": "shallow"
+              }
+            ]
+          },
+          {
+            "source": "./",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "TextArea"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/text-area/test.js",
+      "filenameRelative": "/app/src/text-area/test.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "test.js",
+      "sourceFileName": "test.js",
+      "sourceRoot": "/app/src/text-area",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/text-area",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "test"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _tape = require('tape');\n\nvar _tape2 = _interopRequireDefault(_tape);\n\nvar _enzyme = require('enzyme');\n\nvar _ = require('./');\n\nvar _2 = _interopRequireDefault(_);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _tape2.default)('<TextArea />', function (t) {\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_2.default, { name: 'Name', label: { className: 'green' } }));\n  t.equals(wrapper.find('label').props().className, 'f6 b db mb2 green');\n  t.end();\n});\n\n(0, _tape2.default)('<TextArea> controlled component', function (t) {\n  var name = '';\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_2.default, {\n    name: 'Name',\n    value: name,\n    onChange: function onChange(e) {\n      return name = e.target.value;\n    }\n  }));\n  wrapper.find('textarea').simulate('change', { target: { value: 'Beep' } });\n  t.equals(name, 'Beep');\n  t.end();\n});\n\n(0, _tape2.default)('<TextArea> optional', function (t) {\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_2.default, { name: 'Name', optional: true }));\n  t.equals(wrapper.find('label').find('span').text(), '(optional)');\n  t.end();\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QuanMiXSwibmFtZXMiOlsid3JhcHBlciIsImNsYXNzTmFtZSIsInQiLCJlcXVhbHMiLCJmaW5kIiwicHJvcHMiLCJlbmQiLCJuYW1lIiwiZSIsInRhcmdldCIsInZhbHVlIiwic2ltdWxhdGUiLCJ0ZXh0Il0sIm1hcHBpbmdzIjoiOztBQUFBOzs7O0FBQ0E7Ozs7QUFDQTs7QUFDQTs7Ozs7O0FBRUEsb0JBQUssY0FBTCxFQUFxQixhQUFLO0FBQ3hCLE1BQU1BLFVBQVUscUJBQ2QsNENBQVUsTUFBSyxNQUFmLEVBQXNCLE9BQU8sRUFBRUMsV0FBVyxPQUFiLEVBQTdCLEdBRGMsQ0FBaEI7QUFHQUMsSUFBRUMsTUFBRixDQUFTSCxRQUFRSSxJQUFSLENBQWEsT0FBYixFQUFzQkMsS0FBdEIsR0FBOEJKLFNBQXZDLEVBQWtELG1CQUFsRDtBQUNBQyxJQUFFSSxHQUFGO0FBQ0QsQ0FORDs7QUFRQSxvQkFBSyxpQ0FBTCxFQUF3QyxhQUFLO0FBQzNDLE1BQUlDLE9BQU8sRUFBWDtBQUNBLE1BQU1QLFVBQVUscUJBQ2Q7QUFDRSxVQUFLLE1BRFA7QUFFRSxXQUFPTyxJQUZUO0FBR0UsY0FBVTtBQUFBLGFBQU1BLE9BQU9DLEVBQUVDLE1BQUYsQ0FBU0MsS0FBdEI7QUFBQTtBQUhaLElBRGMsQ0FBaEI7QUFPQVYsVUFBUUksSUFBUixDQUFhLFVBQWIsRUFBeUJPLFFBQXpCLENBQWtDLFFBQWxDLEVBQTRDLEVBQUVGLFFBQVEsRUFBRUMsT0FBTyxNQUFULEVBQVYsRUFBNUM7QUFDQVIsSUFBRUMsTUFBRixDQUFTSSxJQUFULEVBQWUsTUFBZjtBQUNBTCxJQUFFSSxHQUFGO0FBQ0QsQ0FaRDs7QUFjQSxvQkFBSyxxQkFBTCxFQUE0QixhQUFLO0FBQy9CLE1BQU1OLFVBQVUscUJBQVEsNENBQVUsTUFBSyxNQUFmLEVBQXNCLFVBQVUsSUFBaEMsR0FBUixDQUFoQjtBQUNBRSxJQUFFQyxNQUFGLENBQVNILFFBQVFJLElBQVIsQ0FBYSxPQUFiLEVBQXNCQSxJQUF0QixDQUEyQixNQUEzQixFQUFtQ1EsSUFBbkMsRUFBVCxFQUFvRCxZQUFwRDtBQUNBVixJQUFFSSxHQUFGO0FBQ0QsQ0FKRCIsImZpbGUiOiJ0ZXN0LmpzIiwic291cmNlUm9vdCI6Ii9hcHAvc3JjL3RleHQtYXJlYSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCB0ZXN0IGZyb20gJ3RhcGUnXG5pbXBvcnQgeyBzaGFsbG93IH0gZnJvbSAnZW56eW1lJ1xuaW1wb3J0IFRleHRBcmVhIGZyb20gJy4vJ1xuXG50ZXN0KCc8VGV4dEFyZWEgLz4nLCB0ID0+IHtcbiAgY29uc3Qgd3JhcHBlciA9IHNoYWxsb3coXG4gICAgPFRleHRBcmVhIG5hbWU9XCJOYW1lXCIgbGFiZWw9e3sgY2xhc3NOYW1lOiAnZ3JlZW4nIH19IC8+XG4gIClcbiAgdC5lcXVhbHMod3JhcHBlci5maW5kKCdsYWJlbCcpLnByb3BzKCkuY2xhc3NOYW1lLCAnZjYgYiBkYiBtYjIgZ3JlZW4nKVxuICB0LmVuZCgpXG59KVxuXG50ZXN0KCc8VGV4dEFyZWE+IGNvbnRyb2xsZWQgY29tcG9uZW50JywgdCA9PiB7XG4gIGxldCBuYW1lID0gJydcbiAgY29uc3Qgd3JhcHBlciA9IHNoYWxsb3coXG4gICAgPFRleHRBcmVhXG4gICAgICBuYW1lPVwiTmFtZVwiXG4gICAgICB2YWx1ZT17bmFtZX1cbiAgICAgIG9uQ2hhbmdlPXtlID0+IChuYW1lID0gZS50YXJnZXQudmFsdWUpfVxuICAgIC8+XG4gIClcbiAgd3JhcHBlci5maW5kKCd0ZXh0YXJlYScpLnNpbXVsYXRlKCdjaGFuZ2UnLCB7IHRhcmdldDogeyB2YWx1ZTogJ0JlZXAnIH0gfSlcbiAgdC5lcXVhbHMobmFtZSwgJ0JlZXAnKVxuICB0LmVuZCgpXG59KVxuXG50ZXN0KCc8VGV4dEFyZWE+IG9wdGlvbmFsJywgdCA9PiB7XG4gIGNvbnN0IHdyYXBwZXIgPSBzaGFsbG93KDxUZXh0QXJlYSBuYW1lPVwiTmFtZVwiIG9wdGlvbmFsPXt0cnVlfSAvPilcbiAgdC5lcXVhbHMod3JhcHBlci5maW5kKCdsYWJlbCcpLmZpbmQoJ3NwYW4nKS50ZXh0KCksICcob3B0aW9uYWwpJylcbiAgdC5lbmQoKVxufSlcbiJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "test.js"
+      ],
+      "names": [
+        "wrapper",
+        "className",
+        "t",
+        "equals",
+        "find",
+        "props",
+        "end",
+        "name",
+        "e",
+        "target",
+        "value",
+        "simulate",
+        "text"
+      ],
+      "mappings": ";;AAAA;;;;AACA;;;;AACA;;AACA;;;;;;AAEA,oBAAK,cAAL,EAAqB,aAAK;AACxB,MAAMA,UAAU,qBACd,4CAAU,MAAK,MAAf,EAAsB,OAAO,EAAEC,WAAW,OAAb,EAA7B,GADc,CAAhB;AAGAC,IAAEC,MAAF,CAASH,QAAQI,IAAR,CAAa,OAAb,EAAsBC,KAAtB,GAA8BJ,SAAvC,EAAkD,mBAAlD;AACAC,IAAEI,GAAF;AACD,CAND;;AAQA,oBAAK,iCAAL,EAAwC,aAAK;AAC3C,MAAIC,OAAO,EAAX;AACA,MAAMP,UAAU,qBACd;AACE,UAAK,MADP;AAEE,WAAOO,IAFT;AAGE,cAAU;AAAA,aAAMA,OAAOC,EAAEC,MAAF,CAASC,KAAtB;AAAA;AAHZ,IADc,CAAhB;AAOAV,UAAQI,IAAR,CAAa,UAAb,EAAyBO,QAAzB,CAAkC,QAAlC,EAA4C,EAAEF,QAAQ,EAAEC,OAAO,MAAT,EAAV,EAA5C;AACAR,IAAEC,MAAF,CAASI,IAAT,EAAe,MAAf;AACAL,IAAEI,GAAF;AACD,CAZD;;AAcA,oBAAK,qBAAL,EAA4B,aAAK;AAC/B,MAAMN,UAAU,qBAAQ,4CAAU,MAAK,MAAf,EAAsB,UAAU,IAAhC,GAAR,CAAhB;AACAE,IAAEC,MAAF,CAASH,QAAQI,IAAR,CAAa,OAAb,EAAsBA,IAAtB,CAA2B,MAA3B,EAAmCQ,IAAnC,EAAT,EAAoD,YAApD;AACAV,IAAEI,GAAF;AACD,CAJD",
+      "file": "test.js",
+      "sourceRoot": "/app/src/text-area",
+      "sourcesContent": [
+        "import React from 'react'\nimport test from 'tape'\nimport { shallow } from 'enzyme'\nimport TextArea from './'\n\ntest('<TextArea />', t => {\n  const wrapper = shallow(\n    <TextArea name=\"Name\" label={{ className: 'green' }} />\n  )\n  t.equals(wrapper.find('label').props().className, 'f6 b db mb2 green')\n  t.end()\n})\n\ntest('<TextArea> controlled component', t => {\n  let name = ''\n  const wrapper = shallow(\n    <TextArea\n      name=\"Name\"\n      value={name}\n      onChange={e => (name = e.target.value)}\n    />\n  )\n  wrapper.find('textarea').simulate('change', { target: { value: 'Beep' } })\n  t.equals(name, 'Beep')\n  t.end()\n})\n\ntest('<TextArea> optional', t => {\n  const wrapper = shallow(<TextArea name=\"Name\" optional={true} />)\n  t.equals(wrapper.find('label').find('span').text(), '(optional)')\n  t.end()\n})\n"
+      ]
+    },
+    "mtime": 1502632005758
+  },
+  "{\"filename\":\"/app/src/text-area/index.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/text-area\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "ramda",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "R"
+              }
+            ]
+          },
+          {
+            "source": "../lib/combine-string-lists",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "combine"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/text-area/index.js",
+      "filenameRelative": "/app/src/text-area/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/src/text-area",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/text-area",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _ramda = require('ramda');\n\nvar _ramda2 = _interopRequireDefault(_ramda);\n\nvar _combineStringLists = require('../lib/combine-string-lists');\n\nvar _combineStringLists2 = _interopRequireDefault(_combineStringLists);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar pathOr = _ramda2.default.pathOr,\n    propOr = _ramda2.default.propOr,\n    merge = _ramda2.default.merge;\n\n\nvar TextField = function TextField(props) {\n  var lblClassName = (0, _combineStringLists2.default)('f6 b db mb2', pathOr('', ['label', 'className'], props));\n  var labelProps = merge(propOr({}, 'label', props), {\n    className: lblClassName\n  });\n\n  var textareaClassName = (0, _combineStringLists2.default)('input-reset ba b--black-20 pa2 mb2 db w-100', pathOr('', ['textarea', 'className'], props));\n\n  var textareaProps = merge(propOr({}, 'textarea', props), {\n    className: textareaClassName,\n    value: props.value,\n    onChange: props.onChange,\n    type: 'text'\n  });\n\n  var helpClassName = (0, _combineStringLists2.default)('f6 black-60 db mb2', pathOr('', ['help', 'className'], props));\n  var helpProps = merge(propOr({}, 'help', props), {\n    className: helpClassName\n  });\n\n  return _react2.default.createElement(\n    'div',\n    { className: 'measure' },\n    _react2.default.createElement(\n      'label',\n      labelProps,\n      props.name,\n      props.optional && _react2.default.createElement(\n        'span',\n        { className: 'normal black-60' },\n        '(optional)'\n      )\n    ),\n    _react2.default.createElement('textarea', textareaProps),\n    _react2.default.createElement(\n      'small',\n      helpProps,\n      props.helpTxt\n    )\n  );\n};\n\nexports.default = TextField;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbInBhdGhPciIsInByb3BPciIsIm1lcmdlIiwiVGV4dEZpZWxkIiwibGJsQ2xhc3NOYW1lIiwicHJvcHMiLCJsYWJlbFByb3BzIiwiY2xhc3NOYW1lIiwidGV4dGFyZWFDbGFzc05hbWUiLCJ0ZXh0YXJlYVByb3BzIiwidmFsdWUiLCJvbkNoYW5nZSIsInR5cGUiLCJoZWxwQ2xhc3NOYW1lIiwiaGVscFByb3BzIiwibmFtZSIsIm9wdGlvbmFsIiwiaGVscFR4dCJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7Ozs7QUFFQTs7OztBQUNBOzs7Ozs7SUFFUUEsTSxtQkFBQUEsTTtJQUFRQyxNLG1CQUFBQSxNO0lBQVFDLEssbUJBQUFBLEs7OztBQUV4QixJQUFNQyxZQUFZLFNBQVpBLFNBQVksUUFBUztBQUN6QixNQUFNQyxlQUFlLGtDQUNuQixhQURtQixFQUVuQkosT0FBTyxFQUFQLEVBQVcsQ0FBQyxPQUFELEVBQVUsV0FBVixDQUFYLEVBQW1DSyxLQUFuQyxDQUZtQixDQUFyQjtBQUlBLE1BQU1DLGFBQWFKLE1BQU1ELE9BQU8sRUFBUCxFQUFXLE9BQVgsRUFBb0JJLEtBQXBCLENBQU4sRUFBa0M7QUFDbkRFLGVBQVdIO0FBRHdDLEdBQWxDLENBQW5COztBQUlBLE1BQU1JLG9CQUFvQixrQ0FDeEIsNkNBRHdCLEVBRXhCUixPQUFPLEVBQVAsRUFBVyxDQUFDLFVBQUQsRUFBYSxXQUFiLENBQVgsRUFBc0NLLEtBQXRDLENBRndCLENBQTFCOztBQUtBLE1BQU1JLGdCQUFnQlAsTUFBTUQsT0FBTyxFQUFQLEVBQVcsVUFBWCxFQUF1QkksS0FBdkIsQ0FBTixFQUFxQztBQUN6REUsZUFBV0MsaUJBRDhDO0FBRXpERSxXQUFPTCxNQUFNSyxLQUY0QztBQUd6REMsY0FBVU4sTUFBTU0sUUFIeUM7QUFJekRDLFVBQU07QUFKbUQsR0FBckMsQ0FBdEI7O0FBT0EsTUFBTUMsZ0JBQWdCLGtDQUNwQixvQkFEb0IsRUFFcEJiLE9BQU8sRUFBUCxFQUFXLENBQUMsTUFBRCxFQUFTLFdBQVQsQ0FBWCxFQUFrQ0ssS0FBbEMsQ0FGb0IsQ0FBdEI7QUFJQSxNQUFNUyxZQUFZWixNQUFNRCxPQUFPLEVBQVAsRUFBVyxNQUFYLEVBQW1CSSxLQUFuQixDQUFOLEVBQWlDO0FBQ2pERSxlQUFXTTtBQURzQyxHQUFqQyxDQUFsQjs7QUFJQSxTQUNFO0FBQUE7QUFBQSxNQUFLLFdBQVUsU0FBZjtBQUNFO0FBQUE7QUFBV1AsZ0JBQVg7QUFDR0QsWUFBTVUsSUFEVDtBQUVHVixZQUFNVyxRQUFOLElBQWtCO0FBQUE7QUFBQSxVQUFNLFdBQVUsaUJBQWhCO0FBQUE7QUFBQTtBQUZyQixLQURGO0FBS0UsOENBQWNQLGFBQWQsQ0FMRjtBQU1FO0FBQUE7QUFBV0ssZUFBWDtBQUF1QlQsWUFBTVk7QUFBN0I7QUFORixHQURGO0FBVUQsQ0F2Q0Q7O2tCQXlDZWQsUyIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL3NyYy90ZXh0LWFyZWEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXG5cbmltcG9ydCBSIGZyb20gJ3JhbWRhJ1xuaW1wb3J0IGNvbWJpbmUgZnJvbSAnLi4vbGliL2NvbWJpbmUtc3RyaW5nLWxpc3RzJ1xuXG5jb25zdCB7IHBhdGhPciwgcHJvcE9yLCBtZXJnZSB9ID0gUlxuXG5jb25zdCBUZXh0RmllbGQgPSBwcm9wcyA9PiB7XG4gIGNvbnN0IGxibENsYXNzTmFtZSA9IGNvbWJpbmUoXG4gICAgJ2Y2IGIgZGIgbWIyJyxcbiAgICBwYXRoT3IoJycsIFsnbGFiZWwnLCAnY2xhc3NOYW1lJ10sIHByb3BzKVxuICApXG4gIGNvbnN0IGxhYmVsUHJvcHMgPSBtZXJnZShwcm9wT3Ioe30sICdsYWJlbCcsIHByb3BzKSwge1xuICAgIGNsYXNzTmFtZTogbGJsQ2xhc3NOYW1lXG4gIH0pXG5cbiAgY29uc3QgdGV4dGFyZWFDbGFzc05hbWUgPSBjb21iaW5lKFxuICAgICdpbnB1dC1yZXNldCBiYSBiLS1ibGFjay0yMCBwYTIgbWIyIGRiIHctMTAwJyxcbiAgICBwYXRoT3IoJycsIFsndGV4dGFyZWEnLCAnY2xhc3NOYW1lJ10sIHByb3BzKVxuICApXG5cbiAgY29uc3QgdGV4dGFyZWFQcm9wcyA9IG1lcmdlKHByb3BPcih7fSwgJ3RleHRhcmVhJywgcHJvcHMpLCB7XG4gICAgY2xhc3NOYW1lOiB0ZXh0YXJlYUNsYXNzTmFtZSxcbiAgICB2YWx1ZTogcHJvcHMudmFsdWUsXG4gICAgb25DaGFuZ2U6IHByb3BzLm9uQ2hhbmdlLFxuICAgIHR5cGU6ICd0ZXh0J1xuICB9KVxuXG4gIGNvbnN0IGhlbHBDbGFzc05hbWUgPSBjb21iaW5lKFxuICAgICdmNiBibGFjay02MCBkYiBtYjInLFxuICAgIHBhdGhPcignJywgWydoZWxwJywgJ2NsYXNzTmFtZSddLCBwcm9wcylcbiAgKVxuICBjb25zdCBoZWxwUHJvcHMgPSBtZXJnZShwcm9wT3Ioe30sICdoZWxwJywgcHJvcHMpLCB7XG4gICAgY2xhc3NOYW1lOiBoZWxwQ2xhc3NOYW1lXG4gIH0pXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cIm1lYXN1cmVcIj5cbiAgICAgIDxsYWJlbCB7Li4ubGFiZWxQcm9wc30+XG4gICAgICAgIHtwcm9wcy5uYW1lfVxuICAgICAgICB7cHJvcHMub3B0aW9uYWwgJiYgPHNwYW4gY2xhc3NOYW1lPVwibm9ybWFsIGJsYWNrLTYwXCI+KG9wdGlvbmFsKTwvc3Bhbj59XG4gICAgICA8L2xhYmVsPlxuICAgICAgPHRleHRhcmVhIHsuLi50ZXh0YXJlYVByb3BzfSAvPlxuICAgICAgPHNtYWxsIHsuLi5oZWxwUHJvcHN9Pntwcm9wcy5oZWxwVHh0fTwvc21hbGw+XG4gICAgPC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgVGV4dEZpZWxkXG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "pathOr",
+        "propOr",
+        "merge",
+        "TextField",
+        "lblClassName",
+        "props",
+        "labelProps",
+        "className",
+        "textareaClassName",
+        "textareaProps",
+        "value",
+        "onChange",
+        "type",
+        "helpClassName",
+        "helpProps",
+        "name",
+        "optional",
+        "helpTxt"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AAEA;;;;AACA;;;;;;IAEQA,M,mBAAAA,M;IAAQC,M,mBAAAA,M;IAAQC,K,mBAAAA,K;;;AAExB,IAAMC,YAAY,SAAZA,SAAY,QAAS;AACzB,MAAMC,eAAe,kCACnB,aADmB,EAEnBJ,OAAO,EAAP,EAAW,CAAC,OAAD,EAAU,WAAV,CAAX,EAAmCK,KAAnC,CAFmB,CAArB;AAIA,MAAMC,aAAaJ,MAAMD,OAAO,EAAP,EAAW,OAAX,EAAoBI,KAApB,CAAN,EAAkC;AACnDE,eAAWH;AADwC,GAAlC,CAAnB;;AAIA,MAAMI,oBAAoB,kCACxB,6CADwB,EAExBR,OAAO,EAAP,EAAW,CAAC,UAAD,EAAa,WAAb,CAAX,EAAsCK,KAAtC,CAFwB,CAA1B;;AAKA,MAAMI,gBAAgBP,MAAMD,OAAO,EAAP,EAAW,UAAX,EAAuBI,KAAvB,CAAN,EAAqC;AACzDE,eAAWC,iBAD8C;AAEzDE,WAAOL,MAAMK,KAF4C;AAGzDC,cAAUN,MAAMM,QAHyC;AAIzDC,UAAM;AAJmD,GAArC,CAAtB;;AAOA,MAAMC,gBAAgB,kCACpB,oBADoB,EAEpBb,OAAO,EAAP,EAAW,CAAC,MAAD,EAAS,WAAT,CAAX,EAAkCK,KAAlC,CAFoB,CAAtB;AAIA,MAAMS,YAAYZ,MAAMD,OAAO,EAAP,EAAW,MAAX,EAAmBI,KAAnB,CAAN,EAAiC;AACjDE,eAAWM;AADsC,GAAjC,CAAlB;;AAIA,SACE;AAAA;AAAA,MAAK,WAAU,SAAf;AACE;AAAA;AAAWP,gBAAX;AACGD,YAAMU,IADT;AAEGV,YAAMW,QAAN,IAAkB;AAAA;AAAA,UAAM,WAAU,iBAAhB;AAAA;AAAA;AAFrB,KADF;AAKE,8CAAcP,aAAd,CALF;AAME;AAAA;AAAWK,eAAX;AAAuBT,YAAMY;AAA7B;AANF,GADF;AAUD,CAvCD;;kBAyCed,S",
+      "file": "index.js",
+      "sourceRoot": "/app/src/text-area",
+      "sourcesContent": [
+        "import React from 'react'\n\nimport R from 'ramda'\nimport combine from '../lib/combine-string-lists'\n\nconst { pathOr, propOr, merge } = R\n\nconst TextField = props => {\n  const lblClassName = combine(\n    'f6 b db mb2',\n    pathOr('', ['label', 'className'], props)\n  )\n  const labelProps = merge(propOr({}, 'label', props), {\n    className: lblClassName\n  })\n\n  const textareaClassName = combine(\n    'input-reset ba b--black-20 pa2 mb2 db w-100',\n    pathOr('', ['textarea', 'className'], props)\n  )\n\n  const textareaProps = merge(propOr({}, 'textarea', props), {\n    className: textareaClassName,\n    value: props.value,\n    onChange: props.onChange,\n    type: 'text'\n  })\n\n  const helpClassName = combine(\n    'f6 black-60 db mb2',\n    pathOr('', ['help', 'className'], props)\n  )\n  const helpProps = merge(propOr({}, 'help', props), {\n    className: helpClassName\n  })\n\n  return (\n    <div className=\"measure\">\n      <label {...labelProps}>\n        {props.name}\n        {props.optional && <span className=\"normal black-60\">(optional)</span>}\n      </label>\n      <textarea {...textareaProps} />\n      <small {...helpProps}>{props.helpTxt}</small>\n    </div>\n  )\n}\n\nexport default TextField\n"
+      ]
+    },
+    "mtime": 1502632005754
+  },
+  "{\"filename\":\"/app/src/text-field/test.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/text-field\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "tape",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "test"
+              }
+            ]
+          },
+          {
+            "source": "enzyme",
+            "imported": [
+              "shallow"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "shallow",
+                "local": "shallow"
+              }
+            ]
+          },
+          {
+            "source": "./",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "TextField"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/text-field/test.js",
+      "filenameRelative": "/app/src/text-field/test.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "test.js",
+      "sourceFileName": "test.js",
+      "sourceRoot": "/app/src/text-field",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/text-field",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "test"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _tape = require('tape');\n\nvar _tape2 = _interopRequireDefault(_tape);\n\nvar _enzyme = require('enzyme');\n\nvar _ = require('./');\n\nvar _2 = _interopRequireDefault(_);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _tape2.default)('<TextField />', function (t) {\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_2.default, { name: 'Name', label: { className: 'green' } }));\n  t.equals(wrapper.find('label').props().className, 'f6 b db mb2 green');\n  t.end();\n});\n\n(0, _tape2.default)('<TextField> controlled component', function (t) {\n  var name = '';\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_2.default, {\n    name: 'Name',\n    value: name,\n    onChange: function onChange(e) {\n      return name = e.target.value;\n    }\n  }));\n  wrapper.find('input').simulate('change', { target: { value: 'Beep' } });\n  t.equals(name, 'Beep');\n  t.end();\n});\n\n(0, _tape2.default)('<TextField> optional', function (t) {\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_2.default, { name: 'Name', optional: true }));\n  t.equals(wrapper.find('label').find('span').text(), '(optional)');\n  t.end();\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QuanMiXSwibmFtZXMiOlsid3JhcHBlciIsImNsYXNzTmFtZSIsInQiLCJlcXVhbHMiLCJmaW5kIiwicHJvcHMiLCJlbmQiLCJuYW1lIiwiZSIsInRhcmdldCIsInZhbHVlIiwic2ltdWxhdGUiLCJ0ZXh0Il0sIm1hcHBpbmdzIjoiOztBQUFBOzs7O0FBQ0E7Ozs7QUFDQTs7QUFDQTs7Ozs7O0FBRUEsb0JBQUssZUFBTCxFQUFzQixhQUFLO0FBQ3pCLE1BQU1BLFVBQVUscUJBQ2QsNENBQVcsTUFBSyxNQUFoQixFQUF1QixPQUFPLEVBQUVDLFdBQVcsT0FBYixFQUE5QixHQURjLENBQWhCO0FBR0FDLElBQUVDLE1BQUYsQ0FBU0gsUUFBUUksSUFBUixDQUFhLE9BQWIsRUFBc0JDLEtBQXRCLEdBQThCSixTQUF2QyxFQUFrRCxtQkFBbEQ7QUFDQUMsSUFBRUksR0FBRjtBQUNELENBTkQ7O0FBUUEsb0JBQUssa0NBQUwsRUFBeUMsYUFBSztBQUM1QyxNQUFJQyxPQUFPLEVBQVg7QUFDQSxNQUFNUCxVQUFVLHFCQUNkO0FBQ0UsVUFBSyxNQURQO0FBRUUsV0FBT08sSUFGVDtBQUdFLGNBQVU7QUFBQSxhQUFNQSxPQUFPQyxFQUFFQyxNQUFGLENBQVNDLEtBQXRCO0FBQUE7QUFIWixJQURjLENBQWhCO0FBT0FWLFVBQVFJLElBQVIsQ0FBYSxPQUFiLEVBQXNCTyxRQUF0QixDQUErQixRQUEvQixFQUF5QyxFQUFFRixRQUFRLEVBQUVDLE9BQU8sTUFBVCxFQUFWLEVBQXpDO0FBQ0FSLElBQUVDLE1BQUYsQ0FBU0ksSUFBVCxFQUFlLE1BQWY7QUFDQUwsSUFBRUksR0FBRjtBQUNELENBWkQ7O0FBY0Esb0JBQUssc0JBQUwsRUFBNkIsYUFBSztBQUNoQyxNQUFNTixVQUFVLHFCQUFRLDRDQUFXLE1BQUssTUFBaEIsRUFBdUIsVUFBVSxJQUFqQyxHQUFSLENBQWhCO0FBQ0FFLElBQUVDLE1BQUYsQ0FBU0gsUUFBUUksSUFBUixDQUFhLE9BQWIsRUFBc0JBLElBQXRCLENBQTJCLE1BQTNCLEVBQW1DUSxJQUFuQyxFQUFULEVBQW9ELFlBQXBEO0FBQ0FWLElBQUVJLEdBQUY7QUFDRCxDQUpEIiwiZmlsZSI6InRlc3QuanMiLCJzb3VyY2VSb290IjoiL2FwcC9zcmMvdGV4dC1maWVsZCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCB0ZXN0IGZyb20gJ3RhcGUnXG5pbXBvcnQgeyBzaGFsbG93IH0gZnJvbSAnZW56eW1lJ1xuaW1wb3J0IFRleHRGaWVsZCBmcm9tICcuLydcblxudGVzdCgnPFRleHRGaWVsZCAvPicsIHQgPT4ge1xuICBjb25zdCB3cmFwcGVyID0gc2hhbGxvdyhcbiAgICA8VGV4dEZpZWxkIG5hbWU9XCJOYW1lXCIgbGFiZWw9e3sgY2xhc3NOYW1lOiAnZ3JlZW4nIH19IC8+XG4gIClcbiAgdC5lcXVhbHMod3JhcHBlci5maW5kKCdsYWJlbCcpLnByb3BzKCkuY2xhc3NOYW1lLCAnZjYgYiBkYiBtYjIgZ3JlZW4nKVxuICB0LmVuZCgpXG59KVxuXG50ZXN0KCc8VGV4dEZpZWxkPiBjb250cm9sbGVkIGNvbXBvbmVudCcsIHQgPT4ge1xuICBsZXQgbmFtZSA9ICcnXG4gIGNvbnN0IHdyYXBwZXIgPSBzaGFsbG93KFxuICAgIDxUZXh0RmllbGRcbiAgICAgIG5hbWU9XCJOYW1lXCJcbiAgICAgIHZhbHVlPXtuYW1lfVxuICAgICAgb25DaGFuZ2U9e2UgPT4gKG5hbWUgPSBlLnRhcmdldC52YWx1ZSl9XG4gICAgLz5cbiAgKVxuICB3cmFwcGVyLmZpbmQoJ2lucHV0Jykuc2ltdWxhdGUoJ2NoYW5nZScsIHsgdGFyZ2V0OiB7IHZhbHVlOiAnQmVlcCcgfSB9KVxuICB0LmVxdWFscyhuYW1lLCAnQmVlcCcpXG4gIHQuZW5kKClcbn0pXG5cbnRlc3QoJzxUZXh0RmllbGQ+IG9wdGlvbmFsJywgdCA9PiB7XG4gIGNvbnN0IHdyYXBwZXIgPSBzaGFsbG93KDxUZXh0RmllbGQgbmFtZT1cIk5hbWVcIiBvcHRpb25hbD17dHJ1ZX0gLz4pXG4gIHQuZXF1YWxzKHdyYXBwZXIuZmluZCgnbGFiZWwnKS5maW5kKCdzcGFuJykudGV4dCgpLCAnKG9wdGlvbmFsKScpXG4gIHQuZW5kKClcbn0pXG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "test.js"
+      ],
+      "names": [
+        "wrapper",
+        "className",
+        "t",
+        "equals",
+        "find",
+        "props",
+        "end",
+        "name",
+        "e",
+        "target",
+        "value",
+        "simulate",
+        "text"
+      ],
+      "mappings": ";;AAAA;;;;AACA;;;;AACA;;AACA;;;;;;AAEA,oBAAK,eAAL,EAAsB,aAAK;AACzB,MAAMA,UAAU,qBACd,4CAAW,MAAK,MAAhB,EAAuB,OAAO,EAAEC,WAAW,OAAb,EAA9B,GADc,CAAhB;AAGAC,IAAEC,MAAF,CAASH,QAAQI,IAAR,CAAa,OAAb,EAAsBC,KAAtB,GAA8BJ,SAAvC,EAAkD,mBAAlD;AACAC,IAAEI,GAAF;AACD,CAND;;AAQA,oBAAK,kCAAL,EAAyC,aAAK;AAC5C,MAAIC,OAAO,EAAX;AACA,MAAMP,UAAU,qBACd;AACE,UAAK,MADP;AAEE,WAAOO,IAFT;AAGE,cAAU;AAAA,aAAMA,OAAOC,EAAEC,MAAF,CAASC,KAAtB;AAAA;AAHZ,IADc,CAAhB;AAOAV,UAAQI,IAAR,CAAa,OAAb,EAAsBO,QAAtB,CAA+B,QAA/B,EAAyC,EAAEF,QAAQ,EAAEC,OAAO,MAAT,EAAV,EAAzC;AACAR,IAAEC,MAAF,CAASI,IAAT,EAAe,MAAf;AACAL,IAAEI,GAAF;AACD,CAZD;;AAcA,oBAAK,sBAAL,EAA6B,aAAK;AAChC,MAAMN,UAAU,qBAAQ,4CAAW,MAAK,MAAhB,EAAuB,UAAU,IAAjC,GAAR,CAAhB;AACAE,IAAEC,MAAF,CAASH,QAAQI,IAAR,CAAa,OAAb,EAAsBA,IAAtB,CAA2B,MAA3B,EAAmCQ,IAAnC,EAAT,EAAoD,YAApD;AACAV,IAAEI,GAAF;AACD,CAJD",
+      "file": "test.js",
+      "sourceRoot": "/app/src/text-field",
+      "sourcesContent": [
+        "import React from 'react'\nimport test from 'tape'\nimport { shallow } from 'enzyme'\nimport TextField from './'\n\ntest('<TextField />', t => {\n  const wrapper = shallow(\n    <TextField name=\"Name\" label={{ className: 'green' }} />\n  )\n  t.equals(wrapper.find('label').props().className, 'f6 b db mb2 green')\n  t.end()\n})\n\ntest('<TextField> controlled component', t => {\n  let name = ''\n  const wrapper = shallow(\n    <TextField\n      name=\"Name\"\n      value={name}\n      onChange={e => (name = e.target.value)}\n    />\n  )\n  wrapper.find('input').simulate('change', { target: { value: 'Beep' } })\n  t.equals(name, 'Beep')\n  t.end()\n})\n\ntest('<TextField> optional', t => {\n  const wrapper = shallow(<TextField name=\"Name\" optional={true} />)\n  t.equals(wrapper.find('label').find('span').text(), '(optional)')\n  t.end()\n})\n"
+      ]
+    },
+    "mtime": 1502632005774
+  },
+  "{\"filename\":\"/app/src/text-field/index.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/text-field\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "ramda",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "R"
+              }
+            ]
+          },
+          {
+            "source": "../lib/combine-string-lists",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "combine"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/text-field/index.js",
+      "filenameRelative": "/app/src/text-field/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/src/text-field",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/text-field",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _ramda = require('ramda');\n\nvar _ramda2 = _interopRequireDefault(_ramda);\n\nvar _combineStringLists = require('../lib/combine-string-lists');\n\nvar _combineStringLists2 = _interopRequireDefault(_combineStringLists);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar pathOr = _ramda2.default.pathOr,\n    propOr = _ramda2.default.propOr,\n    merge = _ramda2.default.merge;\n\n\nvar TextField = function TextField(props) {\n  var lblClassName = (0, _combineStringLists2.default)('f6 b db mb2', pathOr('', ['label', 'className'], props));\n  var labelProps = merge(propOr({}, 'label', props), {\n    className: lblClassName\n  });\n\n  var inputClassName = (0, _combineStringLists2.default)('input-reset ba b--black-20 pa2 mb2 db w-100', pathOr('', ['input', 'className'], props));\n  var inputProps = merge(propOr({}, 'input', props), {\n    className: inputClassName,\n    value: props.value,\n    onChange: props.onChange,\n    type: 'text'\n  });\n\n  var helpClassName = (0, _combineStringLists2.default)('f6 black-60 db mb2', pathOr('', ['help', 'className'], props));\n  var helpProps = merge(propOr({}, 'help', props), {\n    className: helpClassName\n  });\n\n  return _react2.default.createElement(\n    'div',\n    { className: 'measure' },\n    _react2.default.createElement(\n      'label',\n      labelProps,\n      props.name,\n      props.optional && _react2.default.createElement(\n        'span',\n        { className: 'normal black-60' },\n        '(optional)'\n      )\n    ),\n    _react2.default.createElement('input', inputProps),\n    _react2.default.createElement(\n      'small',\n      helpProps,\n      helpProps.text || props.helpTxt\n    )\n  );\n};\n\nexports.default = TextField;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbInBhdGhPciIsInByb3BPciIsIm1lcmdlIiwiVGV4dEZpZWxkIiwibGJsQ2xhc3NOYW1lIiwicHJvcHMiLCJsYWJlbFByb3BzIiwiY2xhc3NOYW1lIiwiaW5wdXRDbGFzc05hbWUiLCJpbnB1dFByb3BzIiwidmFsdWUiLCJvbkNoYW5nZSIsInR5cGUiLCJoZWxwQ2xhc3NOYW1lIiwiaGVscFByb3BzIiwibmFtZSIsIm9wdGlvbmFsIiwidGV4dCIsImhlbHBUeHQiXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBOzs7O0FBRUE7Ozs7QUFDQTs7Ozs7O0lBRVFBLE0sbUJBQUFBLE07SUFBUUMsTSxtQkFBQUEsTTtJQUFRQyxLLG1CQUFBQSxLOzs7QUFFeEIsSUFBTUMsWUFBWSxTQUFaQSxTQUFZLFFBQVM7QUFDekIsTUFBTUMsZUFBZSxrQ0FDbkIsYUFEbUIsRUFFbkJKLE9BQU8sRUFBUCxFQUFXLENBQUMsT0FBRCxFQUFVLFdBQVYsQ0FBWCxFQUFtQ0ssS0FBbkMsQ0FGbUIsQ0FBckI7QUFJQSxNQUFNQyxhQUFhSixNQUFNRCxPQUFPLEVBQVAsRUFBVyxPQUFYLEVBQW9CSSxLQUFwQixDQUFOLEVBQWtDO0FBQ25ERSxlQUFXSDtBQUR3QyxHQUFsQyxDQUFuQjs7QUFJQSxNQUFNSSxpQkFBaUIsa0NBQ3JCLDZDQURxQixFQUVyQlIsT0FBTyxFQUFQLEVBQVcsQ0FBQyxPQUFELEVBQVUsV0FBVixDQUFYLEVBQW1DSyxLQUFuQyxDQUZxQixDQUF2QjtBQUlBLE1BQU1JLGFBQWFQLE1BQU1ELE9BQU8sRUFBUCxFQUFXLE9BQVgsRUFBb0JJLEtBQXBCLENBQU4sRUFBa0M7QUFDbkRFLGVBQVdDLGNBRHdDO0FBRW5ERSxXQUFPTCxNQUFNSyxLQUZzQztBQUduREMsY0FBVU4sTUFBTU0sUUFIbUM7QUFJbkRDLFVBQU07QUFKNkMsR0FBbEMsQ0FBbkI7O0FBT0EsTUFBTUMsZ0JBQWdCLGtDQUNwQixvQkFEb0IsRUFFcEJiLE9BQU8sRUFBUCxFQUFXLENBQUMsTUFBRCxFQUFTLFdBQVQsQ0FBWCxFQUFrQ0ssS0FBbEMsQ0FGb0IsQ0FBdEI7QUFJQSxNQUFNUyxZQUFZWixNQUFNRCxPQUFPLEVBQVAsRUFBVyxNQUFYLEVBQW1CSSxLQUFuQixDQUFOLEVBQWlDO0FBQ2pERSxlQUFXTTtBQURzQyxHQUFqQyxDQUFsQjs7QUFJQSxTQUNFO0FBQUE7QUFBQSxNQUFLLFdBQVUsU0FBZjtBQUNFO0FBQUE7QUFBV1AsZ0JBQVg7QUFDR0QsWUFBTVUsSUFEVDtBQUVHVixZQUFNVyxRQUFOLElBQWtCO0FBQUE7QUFBQSxVQUFNLFdBQVUsaUJBQWhCO0FBQUE7QUFBQTtBQUZyQixLQURGO0FBS0UsMkNBQVdQLFVBQVgsQ0FMRjtBQU1FO0FBQUE7QUFBV0ssZUFBWDtBQUF1QkEsZ0JBQVVHLElBQVYsSUFBa0JaLE1BQU1hO0FBQS9DO0FBTkYsR0FERjtBQVVELENBdENEOztrQkF3Q2VmLFMiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiL2FwcC9zcmMvdGV4dC1maWVsZCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcblxuaW1wb3J0IFIgZnJvbSAncmFtZGEnXG5pbXBvcnQgY29tYmluZSBmcm9tICcuLi9saWIvY29tYmluZS1zdHJpbmctbGlzdHMnXG5cbmNvbnN0IHsgcGF0aE9yLCBwcm9wT3IsIG1lcmdlIH0gPSBSXG5cbmNvbnN0IFRleHRGaWVsZCA9IHByb3BzID0+IHtcbiAgY29uc3QgbGJsQ2xhc3NOYW1lID0gY29tYmluZShcbiAgICAnZjYgYiBkYiBtYjInLFxuICAgIHBhdGhPcignJywgWydsYWJlbCcsICdjbGFzc05hbWUnXSwgcHJvcHMpXG4gIClcbiAgY29uc3QgbGFiZWxQcm9wcyA9IG1lcmdlKHByb3BPcih7fSwgJ2xhYmVsJywgcHJvcHMpLCB7XG4gICAgY2xhc3NOYW1lOiBsYmxDbGFzc05hbWVcbiAgfSlcblxuICBjb25zdCBpbnB1dENsYXNzTmFtZSA9IGNvbWJpbmUoXG4gICAgJ2lucHV0LXJlc2V0IGJhIGItLWJsYWNrLTIwIHBhMiBtYjIgZGIgdy0xMDAnLFxuICAgIHBhdGhPcignJywgWydpbnB1dCcsICdjbGFzc05hbWUnXSwgcHJvcHMpXG4gIClcbiAgY29uc3QgaW5wdXRQcm9wcyA9IG1lcmdlKHByb3BPcih7fSwgJ2lucHV0JywgcHJvcHMpLCB7XG4gICAgY2xhc3NOYW1lOiBpbnB1dENsYXNzTmFtZSxcbiAgICB2YWx1ZTogcHJvcHMudmFsdWUsXG4gICAgb25DaGFuZ2U6IHByb3BzLm9uQ2hhbmdlLFxuICAgIHR5cGU6ICd0ZXh0J1xuICB9KVxuXG4gIGNvbnN0IGhlbHBDbGFzc05hbWUgPSBjb21iaW5lKFxuICAgICdmNiBibGFjay02MCBkYiBtYjInLFxuICAgIHBhdGhPcignJywgWydoZWxwJywgJ2NsYXNzTmFtZSddLCBwcm9wcylcbiAgKVxuICBjb25zdCBoZWxwUHJvcHMgPSBtZXJnZShwcm9wT3Ioe30sICdoZWxwJywgcHJvcHMpLCB7XG4gICAgY2xhc3NOYW1lOiBoZWxwQ2xhc3NOYW1lXG4gIH0pXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cIm1lYXN1cmVcIj5cbiAgICAgIDxsYWJlbCB7Li4ubGFiZWxQcm9wc30+XG4gICAgICAgIHtwcm9wcy5uYW1lfVxuICAgICAgICB7cHJvcHMub3B0aW9uYWwgJiYgPHNwYW4gY2xhc3NOYW1lPVwibm9ybWFsIGJsYWNrLTYwXCI+KG9wdGlvbmFsKTwvc3Bhbj59XG4gICAgICA8L2xhYmVsPlxuICAgICAgPGlucHV0IHsuLi5pbnB1dFByb3BzfSAvPlxuICAgICAgPHNtYWxsIHsuLi5oZWxwUHJvcHN9PntoZWxwUHJvcHMudGV4dCB8fCBwcm9wcy5oZWxwVHh0fTwvc21hbGw+XG4gICAgPC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgVGV4dEZpZWxkXG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "pathOr",
+        "propOr",
+        "merge",
+        "TextField",
+        "lblClassName",
+        "props",
+        "labelProps",
+        "className",
+        "inputClassName",
+        "inputProps",
+        "value",
+        "onChange",
+        "type",
+        "helpClassName",
+        "helpProps",
+        "name",
+        "optional",
+        "text",
+        "helpTxt"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AAEA;;;;AACA;;;;;;IAEQA,M,mBAAAA,M;IAAQC,M,mBAAAA,M;IAAQC,K,mBAAAA,K;;;AAExB,IAAMC,YAAY,SAAZA,SAAY,QAAS;AACzB,MAAMC,eAAe,kCACnB,aADmB,EAEnBJ,OAAO,EAAP,EAAW,CAAC,OAAD,EAAU,WAAV,CAAX,EAAmCK,KAAnC,CAFmB,CAArB;AAIA,MAAMC,aAAaJ,MAAMD,OAAO,EAAP,EAAW,OAAX,EAAoBI,KAApB,CAAN,EAAkC;AACnDE,eAAWH;AADwC,GAAlC,CAAnB;;AAIA,MAAMI,iBAAiB,kCACrB,6CADqB,EAErBR,OAAO,EAAP,EAAW,CAAC,OAAD,EAAU,WAAV,CAAX,EAAmCK,KAAnC,CAFqB,CAAvB;AAIA,MAAMI,aAAaP,MAAMD,OAAO,EAAP,EAAW,OAAX,EAAoBI,KAApB,CAAN,EAAkC;AACnDE,eAAWC,cADwC;AAEnDE,WAAOL,MAAMK,KAFsC;AAGnDC,cAAUN,MAAMM,QAHmC;AAInDC,UAAM;AAJ6C,GAAlC,CAAnB;;AAOA,MAAMC,gBAAgB,kCACpB,oBADoB,EAEpBb,OAAO,EAAP,EAAW,CAAC,MAAD,EAAS,WAAT,CAAX,EAAkCK,KAAlC,CAFoB,CAAtB;AAIA,MAAMS,YAAYZ,MAAMD,OAAO,EAAP,EAAW,MAAX,EAAmBI,KAAnB,CAAN,EAAiC;AACjDE,eAAWM;AADsC,GAAjC,CAAlB;;AAIA,SACE;AAAA;AAAA,MAAK,WAAU,SAAf;AACE;AAAA;AAAWP,gBAAX;AACGD,YAAMU,IADT;AAEGV,YAAMW,QAAN,IAAkB;AAAA;AAAA,UAAM,WAAU,iBAAhB;AAAA;AAAA;AAFrB,KADF;AAKE,2CAAWP,UAAX,CALF;AAME;AAAA;AAAWK,eAAX;AAAuBA,gBAAUG,IAAV,IAAkBZ,MAAMa;AAA/C;AANF,GADF;AAUD,CAtCD;;kBAwCef,S",
+      "file": "index.js",
+      "sourceRoot": "/app/src/text-field",
+      "sourcesContent": [
+        "import React from 'react'\n\nimport R from 'ramda'\nimport combine from '../lib/combine-string-lists'\n\nconst { pathOr, propOr, merge } = R\n\nconst TextField = props => {\n  const lblClassName = combine(\n    'f6 b db mb2',\n    pathOr('', ['label', 'className'], props)\n  )\n  const labelProps = merge(propOr({}, 'label', props), {\n    className: lblClassName\n  })\n\n  const inputClassName = combine(\n    'input-reset ba b--black-20 pa2 mb2 db w-100',\n    pathOr('', ['input', 'className'], props)\n  )\n  const inputProps = merge(propOr({}, 'input', props), {\n    className: inputClassName,\n    value: props.value,\n    onChange: props.onChange,\n    type: 'text'\n  })\n\n  const helpClassName = combine(\n    'f6 black-60 db mb2',\n    pathOr('', ['help', 'className'], props)\n  )\n  const helpProps = merge(propOr({}, 'help', props), {\n    className: helpClassName\n  })\n\n  return (\n    <div className=\"measure\">\n      <label {...labelProps}>\n        {props.name}\n        {props.optional && <span className=\"normal black-60\">(optional)</span>}\n      </label>\n      <input {...inputProps} />\n      <small {...helpProps}>{helpProps.text || props.helpTxt}</small>\n    </div>\n  )\n}\n\nexport default TextField\n"
+      ]
+    },
+    "mtime": 1502632005770
+  }
+}

@@ -4,6 +4,5 @@ import ListItem from './list-item'
 import TextField from './text-field'
 import TextArea from './text-area'
 import Header from './header'
-import NavItem from './nav-item'
 
-export { Button, List, ListItem, TextField, TextArea }
+export { Button, List, ListItem, TextField, TextArea, Header }
