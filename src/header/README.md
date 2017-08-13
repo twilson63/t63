@@ -4,7 +4,7 @@ The header component, makes it easy to create a basic header with a title in the
 
 ## Example
 
-```
+``` js
 import { Link } from 'react-router-dom'
 import Header from 't63'
 const {Left, Center, Right} = Header
@@ -17,4 +17,3 @@ const {Left, Center, Right} = Header
 ```
 
 Using the Left, Center, and Right Header Components will manage the positioning of the header for you.
-
