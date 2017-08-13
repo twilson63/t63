@@ -242,7 +242,7 @@
         "import React from 'react'\nimport test from 'tape'\nimport { shallow } from 'enzyme'\nimport Button from './'\n\ntest('<Button />', t => {\n  const wrapper = shallow(<Button>Foo</Button>)\n  t.equal(wrapper.text(), 'Foo')\n  t.end()\n})\n\ntest('<Button onClick />', t => {\n  let beep = 'beep'\n  const wrapper = shallow(<Button onClick={e => beep = 'boop'}>Foo</Button>)\n  wrapper.simulate('click')\n  t.equal(beep, 'boop')\n  t.end()\n\n})\n\n\ntest('<Button className />', t => {\n  const className = 'green bg-washed-green b--green'\n  const wrapper = shallow(<Button className={className}>Foo</Button>)\n\n  t.equal(\n    'f6 link dim br1 ph3 pv2 mb2 dib white bg-black green bg-washed-green b--green',\n    wrapper.props().className\n  )\n  t.end()\n\n})\n"
       ]
     },
-    "mtime": 1502632005678
+    "mtime": 1502641520490
   },
   "{\"filename\":\"/app/src/button/index.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/button\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
     "metadata": {
@@ -470,7 +470,7 @@
         "import React from 'react'\nimport combine from '../lib/combine-string-lists'\nimport R from 'ramda'\n\nexport default props => {\n  const className = combine(\n     \"f6 link dim br1 ph3 pv2 mb2 dib white bg-black\",\n     props.className)\n  // className={className}\n  const newProps = R.merge(props, { className: className })\n  return (\n    <button {...newProps}>{props.children}</button>\n  )\n}\n"
       ]
     },
-    "mtime": 1502632005674
+    "mtime": 1502641520486
   },
   "{\"filename\":\"/app/src/lib/combine-string-lists.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/lib\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
     "metadata": {
@@ -672,7 +672,7 @@
         "import R from 'ramda'\nconst { join, union, split } = R\n\nexport default (a='', b='') =>\n  join(' ', union(split(' ', a), split(' ', b)))\n"
       ]
     },
-    "mtime": 1502632005702
+    "mtime": 1502641520522
   },
   "{\"filename\":\"/app/src/header/test.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/header\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
     "metadata": {
@@ -916,7 +916,7 @@
         "import React from 'react'\nimport test from 'tape'\nimport { shallow } from 'enzyme'\nimport Header from './'\n\nconst { Center, Left, Right } = Header\n\ntest('<Header />', t => {\n  const wrapper = shallow(<Header><Center><h1>Title</h1></Center></Header>)\n  t.ok(wrapper.contains(<h1>Title</h1>))\n  t.end()\n})\n"
       ]
     },
-    "mtime": 1502635993621
+    "mtime": 1502641520510
   },
   "{\"filename\":\"/app/src/header/index.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/header\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
     "metadata": {
@@ -1152,7 +1152,7 @@
         "import React from 'react'\nimport R from 'ramda'\nimport combine from '../lib/combine-string-lists'\n\nconst { find, propEq, omit } = R\n\nconst Header = props => {\n  const className = combine('flex items-center justify-between h3', props.className)\n  const headerProps = omit(['className'], props)\n  \n  return (\n    <header className={className} {...headerProps} >\n      {find(propEq('type', Header.Left), props.children) || <Header.Left /> }\n      {props.children.length ? find(propEq('type', Header.Center), props.children) : (props.children || <Header.Center />) }\n      {find(propEq('type', Header.Right), props.children) || <Header.Right />}\n    </header>\n  )\n}\n  \n\nHeader.Center = props => \n  <div>{props.children}</div>\n\nHeader.Left = props => \n  <div className=\"ml2 w2\">{props.children}</div>\n            \nHeader.Right = props => \n  <div className=\"mr2 w2\">{props.children}</div>\n\nexport default Header"
       ]
     },
-    "mtime": 1502636073126
+    "mtime": 1502641520502
   },
   "{\"filename\":\"/app/src/list-item/test.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/list-item\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
     "metadata": {
@@ -1399,7 +1399,7 @@
         "import React from 'react'\nimport test from 'tape'\nimport { shallow } from 'enzyme'\nimport ListItem from './'\n\ntest('<ListItem />', t => {\n  const wrapper = shallow(<ListItem>Beep</ListItem>)\n  t.equals(wrapper.text(), 'Beep')\n  t.end()\n})\n\n\ntest('<ListItem className />', t => {\n  const wrapper = shallow(<ListItem className=\"green\">Beep</ListItem>)\n  t.equals(wrapper.props().className, 'flex items-center lh-copy pa3 ph0-l bb b--black-10 green')\n  t.end()\n})\n\ntest('<ListItem left />', t => {\n  const img = <img alt=\"bill murray\" src=\"http://www.fillmurray.com/300/300\" />\n  const wrapper = shallow(<ListItem left={img}>Beep</ListItem>)\n  t.ok(wrapper.contains(img))\n  t.end()\n})\n\n\ntest('<ListItem right />', t => {\n  const img = <img alt=\"bill murray\" src=\"http://www.fillmurray.com/300/300\" />\n  const button = <button>Click</button>\n  const wrapper = shallow(<ListItem right={button}>Beep</ListItem>)\n  t.ok(wrapper.contains(button))\n  t.ok(!wrapper.contains(img))\n  t.end()\n})\n"
       ]
     },
-    "mtime": 1502632005738
+    "mtime": 1502641520554
   },
   "{\"filename\":\"/app/src/list-item/index.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/list-item\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
     "metadata": {
@@ -1631,7 +1631,7 @@
         "import React from 'react'\nimport R from 'ramda'\nimport combine from '../lib/combine-string-lists'\n\nconst ListItem = props => {\n  const className = combine(\n     \"flex items-center lh-copy pa3 ph0-l bb b--black-10\",\n     props.className)\n  const newProps = R.merge(R.omit(['left', 'right'], props), { className: className })\n\n  return (\n    <li {...newProps}>\n      {props.left && props.left}\n      <div className=\"pl3 flex-auto\">\n        {props.children}\n      </div>\n      {props.right && <div>{props.right}</div>}\n    </li>\n  )\n}\n\nexport default ListItem\n"
       ]
     },
-    "mtime": 1502632005734
+    "mtime": 1502641520550
   },
   "{\"filename\":\"/app/src/list/test.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/list\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
     "metadata": {
@@ -1875,7 +1875,7 @@
         "import React from 'react'\nimport test from 'tape'\nimport { shallow } from 'enzyme'\nimport List from './'\n\ntest('<List />', t => {\n  const wrapper = shallow(<List><li>1</li></List>)\n  t.ok(wrapper.contains(<li>1</li>))\n  t.end()\n})\n\ntest('<List className />', t => {\n  const wrapper = shallow(<List className=\"green\"><li>1</li></List>)\n  t.equals(wrapper.props().className, 'list pl0 mt0 measure center green')\n  t.end()\n\n})\n"
       ]
     },
-    "mtime": 1502632005718
+    "mtime": 1502641520538
   },
   "{\"filename\":\"/app/src/list/index.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/list\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
     "metadata": {
@@ -2103,7 +2103,7 @@
         "import React from 'react'\nimport R from 'ramda'\nimport combine from '../lib/combine-string-lists'\n\nexport default props => {\n  const className = combine(\n     \"list pl0 mt0 measure center\",\n     props.className)\n  const newProps = R.merge(props, { className: className })\n\n  return (\n    <ul {...newProps}>{props.children}</ul>\n  )\n}\n"
       ]
     },
-    "mtime": 1502632005710
+    "mtime": 1502641520534
   },
   "{\"filename\":\"/app/src/text-area/test.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/text-area\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
     "metadata": {
@@ -2352,7 +2352,7 @@
         "import React from 'react'\nimport test from 'tape'\nimport { shallow } from 'enzyme'\nimport TextArea from './'\n\ntest('<TextArea />', t => {\n  const wrapper = shallow(\n    <TextArea name=\"Name\" label={{ className: 'green' }} />\n  )\n  t.equals(wrapper.find('label').props().className, 'f6 b db mb2 green')\n  t.end()\n})\n\ntest('<TextArea> controlled component', t => {\n  let name = ''\n  const wrapper = shallow(\n    <TextArea\n      name=\"Name\"\n      value={name}\n      onChange={e => (name = e.target.value)}\n    />\n  )\n  wrapper.find('textarea').simulate('change', { target: { value: 'Beep' } })\n  t.equals(name, 'Beep')\n  t.end()\n})\n\ntest('<TextArea> optional', t => {\n  const wrapper = shallow(<TextArea name=\"Name\" optional={true} />)\n  t.equals(wrapper.find('label').find('span').text(), '(optional)')\n  t.end()\n})\n"
       ]
     },
-    "mtime": 1502632005758
+    "mtime": 1502641520574
   },
   "{\"filename\":\"/app/src/text-area/index.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/text-area\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
     "metadata": {
@@ -2593,7 +2593,7 @@
         "import React from 'react'\n\nimport R from 'ramda'\nimport combine from '../lib/combine-string-lists'\n\nconst { pathOr, propOr, merge } = R\n\nconst TextField = props => {\n  const lblClassName = combine(\n    'f6 b db mb2',\n    pathOr('', ['label', 'className'], props)\n  )\n  const labelProps = merge(propOr({}, 'label', props), {\n    className: lblClassName\n  })\n\n  const textareaClassName = combine(\n    'input-reset ba b--black-20 pa2 mb2 db w-100',\n    pathOr('', ['textarea', 'className'], props)\n  )\n\n  const textareaProps = merge(propOr({}, 'textarea', props), {\n    className: textareaClassName,\n    value: props.value,\n    onChange: props.onChange,\n    type: 'text'\n  })\n\n  const helpClassName = combine(\n    'f6 black-60 db mb2',\n    pathOr('', ['help', 'className'], props)\n  )\n  const helpProps = merge(propOr({}, 'help', props), {\n    className: helpClassName\n  })\n\n  return (\n    <div className=\"measure\">\n      <label {...labelProps}>\n        {props.name}\n        {props.optional && <span className=\"normal black-60\">(optional)</span>}\n      </label>\n      <textarea {...textareaProps} />\n      <small {...helpProps}>{props.helpTxt}</small>\n    </div>\n  )\n}\n\nexport default TextField\n"
       ]
     },
-    "mtime": 1502632005754
+    "mtime": 1502641520566
   },
   "{\"filename\":\"/app/src/text-field/test.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/text-field\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
     "metadata": {
@@ -2842,7 +2842,7 @@
         "import React from 'react'\nimport test from 'tape'\nimport { shallow } from 'enzyme'\nimport TextField from './'\n\ntest('<TextField />', t => {\n  const wrapper = shallow(\n    <TextField name=\"Name\" label={{ className: 'green' }} />\n  )\n  t.equals(wrapper.find('label').props().className, 'f6 b db mb2 green')\n  t.end()\n})\n\ntest('<TextField> controlled component', t => {\n  let name = ''\n  const wrapper = shallow(\n    <TextField\n      name=\"Name\"\n      value={name}\n      onChange={e => (name = e.target.value)}\n    />\n  )\n  wrapper.find('input').simulate('change', { target: { value: 'Beep' } })\n  t.equals(name, 'Beep')\n  t.end()\n})\n\ntest('<TextField> optional', t => {\n  const wrapper = shallow(<TextField name=\"Name\" optional={true} />)\n  t.equals(wrapper.find('label').find('span').text(), '(optional)')\n  t.end()\n})\n"
       ]
     },
-    "mtime": 1502632005774
+    "mtime": 1502641520590
   },
   "{\"filename\":\"/app/src/text-field/index.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/text-field\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
     "metadata": {
@@ -3084,6 +3084,486 @@
         "import React from 'react'\n\nimport R from 'ramda'\nimport combine from '../lib/combine-string-lists'\n\nconst { pathOr, propOr, merge } = R\n\nconst TextField = props => {\n  const lblClassName = combine(\n    'f6 b db mb2',\n    pathOr('', ['label', 'className'], props)\n  )\n  const labelProps = merge(propOr({}, 'label', props), {\n    className: lblClassName\n  })\n\n  const inputClassName = combine(\n    'input-reset ba b--black-20 pa2 mb2 db w-100',\n    pathOr('', ['input', 'className'], props)\n  )\n  const inputProps = merge(propOr({}, 'input', props), {\n    className: inputClassName,\n    value: props.value,\n    onChange: props.onChange,\n    type: 'text'\n  })\n\n  const helpClassName = combine(\n    'f6 black-60 db mb2',\n    pathOr('', ['help', 'className'], props)\n  )\n  const helpProps = merge(propOr({}, 'help', props), {\n    className: helpClassName\n  })\n\n  return (\n    <div className=\"measure\">\n      <label {...labelProps}>\n        {props.name}\n        {props.optional && <span className=\"normal black-60\">(optional)</span>}\n      </label>\n      <input {...inputProps} />\n      <small {...helpProps}>{helpProps.text || props.helpTxt}</small>\n    </div>\n  )\n}\n\nexport default TextField\n"
       ]
     },
-    "mtime": 1502632005770
+    "mtime": 1502641520586
+  },
+  "{\"filename\":\"/app/src/select/test.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/select\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "tape",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "test"
+              }
+            ]
+          },
+          {
+            "source": "enzyme",
+            "imported": [
+              "shallow"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "shallow",
+                "local": "shallow"
+              }
+            ]
+          },
+          {
+            "source": "./",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "Select"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/select/test.js",
+      "filenameRelative": "/app/src/select/test.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "test.js",
+      "sourceFileName": "test.js",
+      "sourceRoot": "/app/src/select",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/select",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "test"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _tape = require('tape');\n\nvar _tape2 = _interopRequireDefault(_tape);\n\nvar _enzyme = require('enzyme');\n\nvar _ = require('./');\n\nvar _2 = _interopRequireDefault(_);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _tape2.default)('<Select />', function (t) {\n  var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(\n    _2.default,\n    null,\n    _react2.default.createElement(\n      _2.default.Option,\n      { value: '1' },\n      'One'\n    ),\n    _react2.default.createElement(\n      _2.default.Option,\n      { value: '2' },\n      'Two'\n    )\n  ));\n  t.ok(wrapper.contains(\"One\"));\n  t.end();\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QuanMiXSwibmFtZXMiOlsid3JhcHBlciIsInQiLCJvayIsImNvbnRhaW5zIiwiZW5kIl0sIm1hcHBpbmdzIjoiOztBQUFBOzs7O0FBQ0E7Ozs7QUFDQTs7QUFDQTs7Ozs7O0FBRUEsb0JBQUssWUFBTCxFQUFtQixhQUFLO0FBQ3RCLE1BQU1BLFVBQVUscUJBQ2Q7QUFBQTtBQUFBO0FBQ0U7QUFBQSxpQkFBUSxNQUFSO0FBQUEsUUFBZSxPQUFNLEdBQXJCO0FBQUE7QUFBQSxLQURGO0FBRUU7QUFBQSxpQkFBUSxNQUFSO0FBQUEsUUFBZSxPQUFNLEdBQXJCO0FBQUE7QUFBQTtBQUZGLEdBRGMsQ0FBaEI7QUFLQUMsSUFBRUMsRUFBRixDQUFLRixRQUFRRyxRQUFSLENBQWlCLEtBQWpCLENBQUw7QUFDQUYsSUFBRUcsR0FBRjtBQUNELENBUkQiLCJmaWxlIjoidGVzdC5qcyIsInNvdXJjZVJvb3QiOiIvYXBwL3NyYy9zZWxlY3QiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgdGVzdCBmcm9tICd0YXBlJ1xuaW1wb3J0IHsgc2hhbGxvdyB9IGZyb20gJ2VuenltZSdcbmltcG9ydCBTZWxlY3QgZnJvbSAnLi8nXG5cbnRlc3QoJzxTZWxlY3QgLz4nLCB0ID0+IHtcbiAgY29uc3Qgd3JhcHBlciA9IHNoYWxsb3coXG4gICAgPFNlbGVjdD5cbiAgICAgIDxTZWxlY3QuT3B0aW9uIHZhbHVlPVwiMVwiPk9uZTwvU2VsZWN0Lk9wdGlvbj5cbiAgICAgIDxTZWxlY3QuT3B0aW9uIHZhbHVlPVwiMlwiPlR3bzwvU2VsZWN0Lk9wdGlvbj5cbiAgICA8L1NlbGVjdD4pXG4gIHQub2sod3JhcHBlci5jb250YWlucyhcIk9uZVwiKSlcbiAgdC5lbmQoKVxufSlcblxuXG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "test.js"
+      ],
+      "names": [
+        "wrapper",
+        "t",
+        "ok",
+        "contains",
+        "end"
+      ],
+      "mappings": ";;AAAA;;;;AACA;;;;AACA;;AACA;;;;;;AAEA,oBAAK,YAAL,EAAmB,aAAK;AACtB,MAAMA,UAAU,qBACd;AAAA;AAAA;AACE;AAAA,iBAAQ,MAAR;AAAA,QAAe,OAAM,GAArB;AAAA;AAAA,KADF;AAEE;AAAA,iBAAQ,MAAR;AAAA,QAAe,OAAM,GAArB;AAAA;AAAA;AAFF,GADc,CAAhB;AAKAC,IAAEC,EAAF,CAAKF,QAAQG,QAAR,CAAiB,KAAjB,CAAL;AACAF,IAAEG,GAAF;AACD,CARD",
+      "file": "test.js",
+      "sourceRoot": "/app/src/select",
+      "sourcesContent": [
+        "import React from 'react'\nimport test from 'tape'\nimport { shallow } from 'enzyme'\nimport Select from './'\n\ntest('<Select />', t => {\n  const wrapper = shallow(\n    <Select>\n      <Select.Option value=\"1\">One</Select.Option>\n      <Select.Option value=\"2\">Two</Select.Option>\n    </Select>)\n  t.ok(wrapper.contains(\"One\"))\n  t.end()\n})\n\n\n"
+      ]
+    },
+    "mtime": 1502646455849
+  },
+  "{\"filename\":\"/app/src/select/index.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app/src/select\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.25.0": {
+    "metadata": {
+      "usedHelpers": [
+        "extends",
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "ramda",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "R"
+              }
+            ]
+          },
+          {
+            "source": "../lib/combine-string-lists",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "combine"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/src/select/index.js",
+      "filenameRelative": "/app/src/select/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/app/src/select",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app/src/select",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _ramda = require('ramda');\n\nvar _ramda2 = _interopRequireDefault(_ramda);\n\nvar _combineStringLists = require('../lib/combine-string-lists');\n\nvar _combineStringLists2 = _interopRequireDefault(_combineStringLists);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar map = _ramda2.default.map,\n    equals = _ramda2.default.equals,\n    omit = _ramda2.default.omit;\n\n\nvar Select = function Select(props) {\n  var draw = function draw(v) {\n    return function (c) {\n      var className = (0, _combineStringLists2.default)(c.props.className, 'ba pa2 br2 ' + (equals(v, c.props.value) && props.selectedClass));\n      return _react2.default.createElement(Select.Option, _extends({ key: c.props.value }, c.props, {\n        className: className,\n        onClick: function onClick(e) {\n          return props.onChange(c.props.value);\n        }\n      }));\n    };\n  };\n  var selectProps = omit(['value', 'onChange'], props);\n  var className = (0, _combineStringLists2.default)(selectProps.className, 'flex items-center justify-between h3');\n  return _react2.default.createElement(\n    'div',\n    _extends({}, selectProps, { className: className }),\n    map(draw(props.value), props.children)\n  );\n};\n\nSelect.Option = function (props) {\n  return _react2.default.createElement(\n    'div',\n    props,\n    props.children\n  );\n};\n\nexports.default = Select;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbIm1hcCIsImVxdWFscyIsIm9taXQiLCJTZWxlY3QiLCJkcmF3IiwidiIsImNsYXNzTmFtZSIsImMiLCJwcm9wcyIsInZhbHVlIiwic2VsZWN0ZWRDbGFzcyIsIm9uQ2hhbmdlIiwic2VsZWN0UHJvcHMiLCJjaGlsZHJlbiIsIk9wdGlvbiJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFBQTs7OztBQUNBOzs7O0FBQ0E7Ozs7OztJQUVRQSxHLG1CQUFBQSxHO0lBQUtDLE0sbUJBQUFBLE07SUFBUUMsSSxtQkFBQUEsSTs7O0FBRXJCLElBQU1DLFNBQVMsU0FBVEEsTUFBUyxRQUFTO0FBQ3RCLE1BQU1DLE9BQU8sU0FBUEEsSUFBTyxDQUFDQyxDQUFEO0FBQUEsV0FBTyxhQUFLO0FBQ3ZCLFVBQU1DLFlBQVksa0NBQVFDLEVBQUVDLEtBQUYsQ0FBUUYsU0FBaEIsbUJBQ0ZMLE9BQU9JLENBQVAsRUFBVUUsRUFBRUMsS0FBRixDQUFRQyxLQUFsQixLQUE0QkQsTUFBTUUsYUFEaEMsRUFBbEI7QUFFQSxhQUFPLDhCQUFDLE1BQUQsQ0FBUSxNQUFSLGFBQWUsS0FBS0gsRUFBRUMsS0FBRixDQUFRQyxLQUE1QixJQUF1Q0YsRUFBRUMsS0FBekM7QUFDTCxtQkFBV0YsU0FETjtBQUVMLGlCQUFTO0FBQUEsaUJBQUtFLE1BQU1HLFFBQU4sQ0FBZUosRUFBRUMsS0FBRixDQUFRQyxLQUF2QixDQUFMO0FBQUE7QUFGSixTQUFQO0FBSUQsS0FQWTtBQUFBLEdBQWI7QUFRQSxNQUFNRyxjQUFjVixLQUFLLENBQUMsT0FBRCxFQUFVLFVBQVYsQ0FBTCxFQUE0Qk0sS0FBNUIsQ0FBcEI7QUFDQSxNQUFNRixZQUFZLGtDQUFRTSxZQUFZTixTQUFwQixFQUErQixzQ0FBL0IsQ0FBbEI7QUFDQSxTQUNFO0FBQUE7QUFBQSxpQkFBU00sV0FBVCxJQUFzQixXQUFXTixTQUFqQztBQUNHTixRQUFJSSxLQUFLSSxNQUFNQyxLQUFYLENBQUosRUFBdUJELE1BQU1LLFFBQTdCO0FBREgsR0FERjtBQUtELENBaEJEOztBQWtCQVYsT0FBT1csTUFBUCxHQUFnQixpQkFBUztBQUN2QixTQUNFO0FBQUE7QUFBU04sU0FBVDtBQUFpQkEsVUFBTUs7QUFBdkIsR0FERjtBQUdELENBSkQ7O2tCQU1lVixNIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlUm9vdCI6Ii9hcHAvc3JjL3NlbGVjdCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCBSIGZyb20gJ3JhbWRhJ1xuaW1wb3J0IGNvbWJpbmUgZnJvbSAnLi4vbGliL2NvbWJpbmUtc3RyaW5nLWxpc3RzJ1xuXG5jb25zdCB7IG1hcCwgZXF1YWxzLCBvbWl0IH0gPSBSXG5cbmNvbnN0IFNlbGVjdCA9IHByb3BzID0+IHtcbiAgY29uc3QgZHJhdyA9ICh2KSA9PiBjID0+IHtcbiAgICBjb25zdCBjbGFzc05hbWUgPSBjb21iaW5lKGMucHJvcHMuY2xhc3NOYW1lLCBcbiAgICAgIGBiYSBwYTIgYnIyICR7ZXF1YWxzKHYsIGMucHJvcHMudmFsdWUpICYmIHByb3BzLnNlbGVjdGVkQ2xhc3MgfWApXG4gICAgcmV0dXJuIDxTZWxlY3QuT3B0aW9uIGtleT17Yy5wcm9wcy52YWx1ZX0gey4uLmMucHJvcHN9IFxuICAgICAgY2xhc3NOYW1lPXtjbGFzc05hbWV9IFxuICAgICAgb25DbGljaz17ZSA9PiBwcm9wcy5vbkNoYW5nZShjLnByb3BzLnZhbHVlKX1cbiAgICAvPlxuICB9XG4gIGNvbnN0IHNlbGVjdFByb3BzID0gb21pdChbJ3ZhbHVlJywgJ29uQ2hhbmdlJ10sIHByb3BzKVxuICBjb25zdCBjbGFzc05hbWUgPSBjb21iaW5lKHNlbGVjdFByb3BzLmNsYXNzTmFtZSwgJ2ZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiBoMycpXG4gIHJldHVybiAoXG4gICAgPGRpdiB7Li4uc2VsZWN0UHJvcHN9IGNsYXNzTmFtZT17Y2xhc3NOYW1lfT5cbiAgICAgIHttYXAoZHJhdyhwcm9wcy52YWx1ZSksIHByb3BzLmNoaWxkcmVuKX1cbiAgICA8L2Rpdj5cbiAgKVxufVxuXG5TZWxlY3QuT3B0aW9uID0gcHJvcHMgPT4ge1xuICByZXR1cm4gKFxuICAgIDxkaXYgey4uLnByb3BzfT57cHJvcHMuY2hpbGRyZW59PC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgU2VsZWN0Il19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "map",
+        "equals",
+        "omit",
+        "Select",
+        "draw",
+        "v",
+        "className",
+        "c",
+        "props",
+        "value",
+        "selectedClass",
+        "onChange",
+        "selectProps",
+        "children",
+        "Option"
+      ],
+      "mappings": ";;;;;;;;AAAA;;;;AACA;;;;AACA;;;;;;IAEQA,G,mBAAAA,G;IAAKC,M,mBAAAA,M;IAAQC,I,mBAAAA,I;;;AAErB,IAAMC,SAAS,SAATA,MAAS,QAAS;AACtB,MAAMC,OAAO,SAAPA,IAAO,CAACC,CAAD;AAAA,WAAO,aAAK;AACvB,UAAMC,YAAY,kCAAQC,EAAEC,KAAF,CAAQF,SAAhB,mBACFL,OAAOI,CAAP,EAAUE,EAAEC,KAAF,CAAQC,KAAlB,KAA4BD,MAAME,aADhC,EAAlB;AAEA,aAAO,8BAAC,MAAD,CAAQ,MAAR,aAAe,KAAKH,EAAEC,KAAF,CAAQC,KAA5B,IAAuCF,EAAEC,KAAzC;AACL,mBAAWF,SADN;AAEL,iBAAS;AAAA,iBAAKE,MAAMG,QAAN,CAAeJ,EAAEC,KAAF,CAAQC,KAAvB,CAAL;AAAA;AAFJ,SAAP;AAID,KAPY;AAAA,GAAb;AAQA,MAAMG,cAAcV,KAAK,CAAC,OAAD,EAAU,UAAV,CAAL,EAA4BM,KAA5B,CAApB;AACA,MAAMF,YAAY,kCAAQM,YAAYN,SAApB,EAA+B,sCAA/B,CAAlB;AACA,SACE;AAAA;AAAA,iBAASM,WAAT,IAAsB,WAAWN,SAAjC;AACGN,QAAII,KAAKI,MAAMC,KAAX,CAAJ,EAAuBD,MAAMK,QAA7B;AADH,GADF;AAKD,CAhBD;;AAkBAV,OAAOW,MAAP,GAAgB,iBAAS;AACvB,SACE;AAAA;AAASN,SAAT;AAAiBA,UAAMK;AAAvB,GADF;AAGD,CAJD;;kBAMeV,M",
+      "file": "index.js",
+      "sourceRoot": "/app/src/select",
+      "sourcesContent": [
+        "import React from 'react'\nimport R from 'ramda'\nimport combine from '../lib/combine-string-lists'\n\nconst { map, equals, omit } = R\n\nconst Select = props => {\n  const draw = (v) => c => {\n    const className = combine(c.props.className, \n      `ba pa2 br2 ${equals(v, c.props.value) && props.selectedClass }`)\n    return <Select.Option key={c.props.value} {...c.props} \n      className={className} \n      onClick={e => props.onChange(c.props.value)}\n    />\n  }\n  const selectProps = omit(['value', 'onChange'], props)\n  const className = combine(selectProps.className, 'flex items-center justify-between h3')\n  return (\n    <div {...selectProps} className={className}>\n      {map(draw(props.value), props.children)}\n    </div>\n  )\n}\n\nSelect.Option = props => {\n  return (\n    <div {...props}>{props.children}</div>\n  )\n}\n\nexport default Select"
+      ]
+    },
+    "mtime": 1502646468821
   }
 }
