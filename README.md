@@ -46,13 +46,17 @@ const () => (
 )
 ```
 
+## Testing
+
+`npm t`
+
 ## components
 
 * [Button](src/button/README.md)
 * [List](src/list/README.md)
 * [ListItem](src/list-item/README.md)
 * [TextField](src/text-field/README.md)
-* TextArea
+* [TextArea](src/text-area/README.md)
 * Header
 * Yes/No Button
 * SelectList
