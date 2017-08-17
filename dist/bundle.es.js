@@ -9444,7 +9444,7 @@ var Select = function Select(props) {
       }));
     };
   };
-  var selectProps = omit$3(['value', 'onChange'], props);
+  var selectProps = omit$3(['selectedClass', 'value', 'onChange'], props);
   var className = combine(selectProps.className, 'flex items-center justify-between h3');
   return React.createElement(
     'div',

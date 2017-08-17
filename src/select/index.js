@@ -19,7 +19,7 @@ const Select = props => {
       />
     )
   }
-  const selectProps = omit(['value', 'onChange'], props)
+  const selectProps = omit(['selectedClass', 'value', 'onChange'], props)
   const className = combine(
     selectProps.className,
     'flex items-center justify-between h3'
