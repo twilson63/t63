@@ -9467,6 +9467,46 @@ Select.Option = function (props) {
   );
 };
 
+var map$4 = index$1.map;
+var equals$4 = index$1.equals;
+var contains$2 = index$1.contains;
+var cond$2 = index$1.cond;
+var T$2 = index$1.T;
+var append$2 = index$1.append;
+var reject$3 = index$1.reject;
+
+
+var idempotent = function idempotent(v, values) {
+  return cond$2([[contains$2(v), reject$3(equals$4(v))], [T$2, append$2(v)]])(values);
+};
+
+var MultiSelect = function MultiSelect(props) {
+  var draw = function draw(v) {
+    return function (c) {
+      var className = combine(c.props.className, 'ba pa2 br2 ' + (contains$2(c.props.value, v) && props.selectedClass));
+      return React.createElement(MultiSelect.Option, _extends({}, c.props, {
+        className: className,
+        onClick: function onClick(e) {
+          props.onChange(idempotent(c.props.value, v));
+        }
+      }));
+    };
+  };
+  return React.createElement(
+    'div',
+    { className: 'flex items-center justify-between h3' },
+    map$4(draw(props.value), props.children)
+  );
+};
+
+MultiSelect.Option = function (props) {
+  return React.createElement(
+    'div',
+    props,
+    props.children
+  );
+};
+
 exports.Button = index;
 exports.List = index$2;
 exports.ListItem = ListItem;
@@ -9474,6 +9514,7 @@ exports.TextField = TextField;
 exports.TextArea = TextField$2;
 exports.Header = Header;
 exports.Select = Select;
+exports.MultiSelect = MultiSelect;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
