@@ -2,7 +2,7 @@ import React from 'react'
 import R from 'ramda'
 import combine from '../lib/combine-string-lists'
 
-const { find, propEq, omit } = R
+const { omit } = R
 
 const Header = props => {
   const className = combine(
@@ -13,11 +13,7 @@ const Header = props => {
 
   return (
     <header className={className} {...headerProps}>
-      {find(propEq('type', Header.Left), props.children) || <Header.Left />}
-      {props.children.length
-        ? find(propEq('type', Header.Center), props.children)
-        : props.children || <Header.Center />}
-      {find(propEq('type', Header.Right), props.children) || <Header.Right />}
+      {props.children}
     </header>
   )
 }

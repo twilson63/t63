@@ -9383,8 +9383,6 @@ var _extends = Object.assign || function (target) {
   return target;
 };
 
-var find$2 = index$1.find;
-var propEq$2 = index$1.propEq;
 var omit$2 = index$1.omit;
 
 
@@ -9395,9 +9393,7 @@ var Header = function Header(props) {
   return React.createElement(
     'header',
     _extends({ className: className }, headerProps),
-    find$2(propEq$2('type', Header.Left), props.children) || React.createElement(Header.Left, null),
-    props.children.length ? find$2(propEq$2('type', Header.Center), props.children) : props.children || React.createElement(Header.Center, null),
-    find$2(propEq$2('type', Header.Right), props.children) || React.createElement(Header.Right, null)
+    props.children
   );
 };
 

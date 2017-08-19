@@ -5,11 +5,10 @@
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.es.js",
   "scripts": {
-    "build": "rollup -c ./rollup.config.js -n t63",
-    "test": "babel-tape-runner \"src/**/*test.js\" | faucet",
+    "build": "NODE_ENV=production rollup -c ./rollup.config.js -n t63",
+    "test": "NODE_ENV=test babel-tape-runner \"src/**/*test.js\" | faucet",
     "dev": "rollup -c -w ./rollup.config.js -n t63",
-    "start": "node server.js",
-    "test2": "babel-node \"src/**/*test.js\" | tape"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "Tom",
@@ -34,22 +33,30 @@
     "tape": "^4.7.0"
   },
   "dependencies": {
+    "babel-helpers": "^6.24.1",
     "prop-types": "^15.5.10",
     "ramda": "^0.24.1"
   },
   "babel": {
-    "presets": [
-      [
-        "es2015",
-        {
-          "modules": false
-        }
-      ],
-      "react"
-    ],
-    "plugins": [
-      "external-helpers"
-    ]
+    "env": {
+      "test": {
+        "presets": ["es2015", "react"]
+      },
+      "production": {
+        "presets": [
+          [
+            "es2015",
+            {
+              "modules": false
+            }
+          ],
+          "react"
+        ],
+        "plugins": [
+          "external-helpers"
+        ]
+      }
+    }
   },
   "repository": {
     "type": "git",
