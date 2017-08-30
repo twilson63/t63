@@ -59,7 +59,7 @@ const () => (
 * [TextArea](src/text-area/README.md)
 * [Header](src/header/README.md)
 * [Select](src/select/README.md)
-* [RadioList](src/select/README.md)
+* [RadioList](src/radio-list/README.md)
 
 ## Contributions
 
