@@ -2,7 +2,7 @@ import React from 'react'
 import R from 'ramda'
 import MdRadioChecked from 'react-icons/lib/md/radio-button-checked'
 import MdRadio from 'react-icons/lib/md/radio-button-unchecked'
-import cuid from 'cuid'
+import randomId from 'random-id'
 //import PropTypes from 'prop-types'
 
 const { map, isNil } = R
@@ -16,7 +16,7 @@ const RadioList = ({
   children
 }) => {
   checkedColor = isNil(checkedColor) ? color : checkedColor
-  const group = cuid()
+  const group = randomId()
   const createRadio = (value, onChange) => c => {
     const radioClassName = isNil(className) ? 'f3' : className
     return (
@@ -55,7 +55,7 @@ const Radio = ({
   onChange,
   children
 }) => {
-  const id = cuid()
+  const id = randomId()
   // `ml1 border-box ${color}`
   return (
     <div value={value} className="flex items-center">

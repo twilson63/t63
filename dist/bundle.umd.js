@@ -1,11 +1,10 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('os')) :
-	typeof define === 'function' && define.amd ? define(['exports', 'react', 'os'], factory) :
-	(factory((global.t63 = {}),global.React,global.os));
-}(this, (function (exports,React,os) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react')) :
+	typeof define === 'function' && define.amd ? define(['exports', 'react'], factory) :
+	(factory((global.t63 = {}),global.React));
+}(this, (function (exports,React) { 'use strict';
 
 React = React && React.hasOwnProperty('default') ? React['default'] : React;
-os = os && os.hasOwnProperty('default') ? os['default'] : os;
 
 var _isPlaceholder = function _isPlaceholder(a) {
   return a != null &&
@@ -9504,9 +9503,9 @@ MultiSelect.Option = function (props) {
   );
 };
 
-var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-
+function commonjsRequire () {
+	throw new Error('Dynamic requires are not currently supported by rollup-plugin-commonjs');
+}
 
 function unwrapExports (x) {
 	return x && x.__esModule ? x['default'] : x;
@@ -14242,110 +14241,43 @@ module.exports = exports['default'];
 
 var MdRadio = unwrapExports(radioButtonUnchecked);
 
-var nodeCuid = createCommonjsModule(function (module) {
-/**
- * cuid.js
- * Collision-resistant UID generator for browsers and node.
- * Sequential for fast db lookups and recency sorting.
- * Safe for element IDs and server-side lookups.
- *
- * Extracted from CLCTR
- *
- * Copyright (c) Eric Elliott 2012
- * MIT License
- */
+var randomID = createCommonjsModule(function (module) {
+(function(){
+	var randomID = function(len,pattern){
+		var possibilities = ["abcdefghijklmnopqrstuvwxyz","ABCDEFGHIJKLMNOPQRSTUVWXYZ", "0123456789", "~!@#$%^&()_+-={}[];\',"];
+		var chars = "";
 
-/*global window, navigator, document, require, process, module */
-(function (app) {
-  'use strict';
-  var namespace = 'cuid',
-    c = 0,
-    blockSize = 4,
-    base = 36,
-    discreteValues = Math.pow(base, blockSize),
+		var pattern = pattern ? pattern : "aA0";
+		pattern.split('').forEach(function(a){
+			if(!isNaN(parseInt(a))){
+				chars += possibilities[2];
+			}else if(/[a-z]/.test(a)){
+				chars += possibilities[0];
+			}else if(/[A-Z]/.test(a)){
+				chars += possibilities[1];
+			}else{
+				chars += possibilities[3];
+			}
+		});
 
-    pad = function pad(num, size) {
-      var s = "000000000" + num;
-      return s.substr(s.length-size);
-    },
+		var len = len ? len : 30;
 
-    randomBlock = function randomBlock() {
-      return pad((Math.random() *
-            discreteValues << 0)
-            .toString(base), blockSize);
-    },
+		var result = '';
 
-    safeCounter = function () {
-      c = (c < discreteValues) ? c : 0;
-      c++; // this is not subliminal
-      return c - 1;
-    },
+		while(len--){
+			result += chars.charAt(Math.floor(Math.random() * chars.length));
+		}
 
-    api = function cuid() {
-      // Starting with a lowercase letter makes
-      // it HTML element ID friendly.
-      var letter = 'c', // hard-coded allows for sequential access
+		return result;
+	};
 
-        // timestamp
-        // warning: this exposes the exact date and time
-        // that the uid was created.
-        timestamp = (new Date().getTime()).toString(base),
+	if('object' !== "undefined" && typeof commonjsRequire !== "undefined"){
+		module.exports = randomID;
+	} else {
+		window["randomID"] = randomID;
+	}
 
-        // Prevent same-machine collisions.
-        counter,
-
-        // A few chars to generate distinct ids for different
-        // clients (so different computers are far less
-        // likely to generate the same id)
-        fingerprint = api.fingerprint(),
-
-        // Grab some more chars from Math.random()
-        random = randomBlock() + randomBlock();
-
-        counter = pad(safeCounter().toString(base), blockSize);
-
-      return  (letter + timestamp + counter + fingerprint + random);
-    };
-
-  api.slug = function slug() {
-    var date = new Date().getTime().toString(36),
-      counter,
-      print = api.fingerprint().slice(0,1) +
-        api.fingerprint().slice(-1),
-      random = randomBlock().slice(-2);
-
-      counter = safeCounter().toString(36).slice(-4);
-
-    return date.slice(-2) +
-      counter + print + random;
-  };
-
-  api.fingerprint = function nodePrint() {
-    var os$$1 = os,
-
-      padding = 2,
-      pid = pad((process.pid).toString(36), padding),
-      hostname = os$$1.hostname(),
-      length = hostname.length,
-      hostId = pad((hostname)
-        .split('')
-        .reduce(function (prev, char) {
-          return +prev + char.charCodeAt(0);
-        }, +length + 36)
-        .toString(36),
-      padding);
-    return pid + hostId;
-  };
-
-
-  // don't change anything from here down.
-  if (app.register) {
-    app.register(namespace, api);
-  } else {
-    module.exports = api;
-  }
-
-}(commonjsGlobal.applitude || commonjsGlobal));
+})();
 });
 
 //import PropTypes from 'prop-types'
@@ -14363,7 +14295,7 @@ var RadioList = function RadioList(_ref) {
       children = _ref.children;
 
   checkedColor = isNil$3(checkedColor) ? color : checkedColor;
-  var group = nodeCuid();
+  var group = randomID();
   var createRadio = function createRadio(value, onChange) {
     return function (c) {
       var radioClassName = isNil$3(className) ? 'f3' : className;
@@ -14408,7 +14340,7 @@ var Radio = function Radio(_ref2) {
       _onChange = _ref2.onChange,
       children = _ref2.children;
 
-  var id = nodeCuid();
+  var id = randomID();
   // `ml1 border-box ${color}`
   return React.createElement(
     'div',

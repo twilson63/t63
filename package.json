@@ -34,8 +34,8 @@
   },
   "dependencies": {
     "babel-helpers": "^6.24.1",
-    "cuid": "^1.3.8",
     "ramda": "^0.24.1",
+    "random-id": "0.0.2",
     "react-icons": "^2.2.5"
   },
   "babel": {
