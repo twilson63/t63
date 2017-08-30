@@ -6,6 +6,7 @@ import TextArea from './text-area'
 import Header from './header'
 import Select from './select'
 import MultiSelect from './multi-select'
+import RadioList from './radio-list'
 
 export {
   Button,
@@ -15,5 +16,6 @@ export {
   TextArea,
   Header,
   Select,
-  MultiSelect
+  MultiSelect,
+  RadioList
 }

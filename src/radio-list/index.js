@@ -1,0 +1,80 @@
+import React from 'react'
+import R from 'ramda'
+import MdRadioChecked from 'react-icons/lib/md/radio-button-checked'
+import MdRadio from 'react-icons/lib/md/radio-button-unchecked'
+import cuid from 'cuid'
+
+const { map, isNil } = R
+
+const RadioList = ({
+  className,
+  value,
+  onChange,
+  color,
+  checkedColor,
+  children
+}) => {
+  checkedColor = isNil(checkedColor) ? color : checkedColor
+  const group = cuid()
+  const createRadio = (value, onChange) => c => {
+    const radioClassName = isNil(className) ? 'f3' : className
+    return (
+      <RadioList.Radio
+        currentValue={value}
+        onChange={onChange}
+        group={group}
+        value={c.props.value}
+        radioClassName={radioClassName}
+        checkedColor={checkedColor}
+        color={color}
+      >
+        {c.props.children}
+      </RadioList.Radio>
+    )
+  }
+
+  return <div>{map(createRadio(value, onChange), children)}</div>
+}
+
+const Radio = ({
+  group,
+  color,
+  currentValue,
+  checkedColor,
+  radioClassName,
+  value,
+  onChange,
+  children
+}) => {
+  const id = cuid()
+  // `ml1 border-box ${color}`
+  return (
+    <div value={value} className="flex items-center">
+      <input
+        id={id}
+        className="dn"
+        type="radio"
+        name={group}
+        checked={currentValue === value}
+        onChange={e => onChange(value)}
+      />
+      {currentValue === value ? (
+        <MdRadioChecked
+          className={[radioClassName, checkedColor, 'animated pulse'].join(' ')}
+        />
+      ) : (
+        <MdRadio
+          onClick={e => onChange(value)}
+          className={[radioClassName, checkedColor].join(' ')}
+        />
+      )}
+      <label htmlFor={id} className={['ml1', radioClassName, color].join(' ')}>
+        {children}
+      </label>
+    </div>
+  )
+}
+
+RadioList.Radio = Radio
+
+export default RadioList
