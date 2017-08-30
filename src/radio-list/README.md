@@ -25,6 +25,30 @@ export default Example
 
 ---
 
+### RadioList
+
+Props
+
+|--------------|---------------|--------------------------------
+| name         | type          | description       
+|--------------|---------------|--------------------------------
+| value        | string (required)       | the current value of the control
+| onChange     | function (required)     | the change event when a radio button is selected
+| color        | string        | color of the label of each radio button
+| checkedColor | string | radio button color
+| className    | string | css classes to apply to each radio component
+
+### Radio
+
+Props
+
+|--------------|---------------|--------------------------------
+| name         | type          | description       
+|--------------|---------------|--------------------------------
+| value        | string (required)  | the value of the radio option
+
+---
+
 * [code](index.js)
 * [test](test.js)
 
