@@ -13125,7 +13125,7 @@ if (process.env.NODE_ENV !== 'production') {
   ReactPropTypeLocationNames$2 = {};
 }
 
-function factory$1(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
+function factory$2(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
   /**
    * Policies that describe methods in `ReactClassInterface`.
    */
@@ -13956,7 +13956,7 @@ function factory$1(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
   return createClass;
 }
 
-var factory_1$2 = factory$1;
+var factory_1$2 = factory$2;
 
 var Component = ReactBaseClasses.Component;
 
@@ -14348,83 +14348,7 @@ var nodeCuid = createCommonjsModule(function (module) {
 }(commonjsGlobal.applitude || commonjsGlobal));
 });
 
-var factoryWithThrowingShims$2 = function() {
-  function shim(props, propName, componentName, location, propFullName, secret) {
-    if (secret === ReactPropTypesSecret_1$4) {
-      // It is still safe when called from React.
-      return;
-    }
-    invariant_1(
-      false,
-      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
-      'Use PropTypes.checkPropTypes() to call them. ' +
-      'Read more at http://fb.me/use-check-prop-types'
-    );
-  }
-  shim.isRequired = shim;
-  function getShim() {
-    return shim;
-  }
-  // Important!
-  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
-  var ReactPropTypes = {
-    array: shim,
-    bool: shim,
-    func: shim,
-    number: shim,
-    object: shim,
-    string: shim,
-    symbol: shim,
-
-    any: shim,
-    arrayOf: getShim,
-    element: shim,
-    instanceOf: getShim,
-    node: shim,
-    objectOf: getShim,
-    oneOf: getShim,
-    oneOfType: getShim,
-    shape: getShim
-  };
-
-  ReactPropTypes.checkPropTypes = emptyFunction_1;
-  ReactPropTypes.PropTypes = ReactPropTypes;
-
-  return ReactPropTypes;
-};
-
-var index$11 = createCommonjsModule(function (module) {
-/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-if (process.env.NODE_ENV !== 'production') {
-  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
-    Symbol.for &&
-    Symbol.for('react.element')) ||
-    0xeac7;
-
-  var isValidElement = function(object) {
-    return typeof object === 'object' &&
-      object !== null &&
-      object.$$typeof === REACT_ELEMENT_TYPE;
-  };
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = factoryWithTypeCheckers$2(isValidElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = factoryWithThrowingShims$2();
-}
-});
+//import PropTypes from 'prop-types'
 
 var map$5 = index$1.map;
 var isNil$3 = index$1.isNil;
@@ -14466,13 +14390,13 @@ var RadioList = function RadioList(_ref) {
   );
 };
 
-RadioList.propTypes = {
-  value: index$11.string.isRequired,
-  onChange: index$11.func.isRequired,
-  color: index$11.string,
-  checkedColor: index$11.string,
-  className: index$11.string
-};
+// RadioList.propTypes = {
+//   value: PropTypes.string.isRequired,
+//   onChange: PropTypes.func.isRequired,
+//   color: PropTypes.string,
+//   checkedColor: PropTypes.string,
+//   className: PropTypes.string
+// }
 
 var Radio = function Radio(_ref2) {
   var group = _ref2.group,
@@ -14515,9 +14439,9 @@ var Radio = function Radio(_ref2) {
   );
 };
 
-Radio.propTypes = {
-  value: index$11.string.isRequired
-};
+// Radio.propTypes = {
+//   value: PropTypes.string.isRequired
+// }
 
 RadioList.Radio = Radio;
 

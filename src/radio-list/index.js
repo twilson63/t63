@@ -3,7 +3,7 @@ import R from 'ramda'
 import MdRadioChecked from 'react-icons/lib/md/radio-button-checked'
 import MdRadio from 'react-icons/lib/md/radio-button-unchecked'
 import cuid from 'cuid'
-import PropTypes from 'prop-types'
+//import PropTypes from 'prop-types'
 
 const { map, isNil } = R
 
@@ -37,13 +37,13 @@ const RadioList = ({
   return <div>{map(createRadio(value, onChange), children)}</div>
 }
 
-RadioList.propTypes = {
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  color: PropTypes.string,
-  checkedColor: PropTypes.string,
-  className: PropTypes.string
-}
+// RadioList.propTypes = {
+//   value: PropTypes.string.isRequired,
+//   onChange: PropTypes.func.isRequired,
+//   color: PropTypes.string,
+//   checkedColor: PropTypes.string,
+//   className: PropTypes.string
+// }
 
 const Radio = ({
   group,
@@ -84,9 +84,9 @@ const Radio = ({
   )
 }
 
-Radio.propTypes = {
-  value: PropTypes.string.isRequired
-}
+// Radio.propTypes = {
+//   value: PropTypes.string.isRequired
+// }
 
 RadioList.Radio = Radio
 
