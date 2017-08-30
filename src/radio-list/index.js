@@ -3,7 +3,6 @@ import R from 'ramda'
 import MdRadioChecked from 'react-icons/lib/md/radio-button-checked'
 import MdRadio from 'react-icons/lib/md/radio-button-unchecked'
 import randomId from 'random-id'
-//import PropTypes from 'prop-types'
 
 const { map, isNil } = R
 

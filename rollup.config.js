@@ -2,6 +2,7 @@ import babel from 'rollup-plugin-babel'
 import jsx from 'rollup-plugin-jsx'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
+import replace from 'rollup-plugin-replace'
 
 export default {
   entry: 'src/index.js',
@@ -12,7 +13,8 @@ export default {
     }),
     jsx({ factory: 'React.createElement' }),
     resolve(),
-    commonjs()
+    commonjs(),
+    replace({ 'process.env.NODE_ENV': JSON.stringify('production') })
   ],
   targets: [
     { dest: 'dist/bundle.cjs.js', format: 'cjs' },

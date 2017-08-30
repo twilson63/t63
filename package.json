@@ -29,6 +29,7 @@
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-jsx": "^1.0.3",
     "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-replace": "^1.1.1",
     "rollup-watch": "^4.3.1",
     "tape": "^4.7.0"
   },
