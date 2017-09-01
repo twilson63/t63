@@ -60,6 +60,7 @@ const () => (
 * [Header](src/header/README.md)
 * [Select](src/select/README.md)
 * [RadioList](src/radio-list/README.md)
+* [FlatButton](src/flat-button/README.md)
 
 ## Contributions
 
