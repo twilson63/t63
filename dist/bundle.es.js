@@ -12710,4 +12710,50 @@ var Radio = function Radio(_ref2) {
 
 RadioList.Radio = Radio;
 
-export { index as Button, index$2 as List, ListItem, TextField, TextField$2 as TextArea, Header, Select, MultiSelect, RadioList };
+var trim$2 = index$1.trim;
+var equals$5 = index$1.equals;
+var not$3 = index$1.not;
+
+var FlatButton = function FlatButton(_ref) {
+  var onClick = _ref.onClick,
+      _ref$hoverColor = _ref.hoverColor,
+      hoverColor = _ref$hoverColor === undefined ? 'light-gray' : _ref$hoverColor,
+      _ref$color = _ref.color,
+      color = _ref$color === undefined ? 'black-80' : _ref$color,
+      children = _ref.children,
+      _ref$disabled = _ref.disabled,
+      disabled = _ref$disabled === undefined ? false : _ref$disabled,
+      className = _ref.className,
+      type = _ref.type,
+      href = _ref.href;
+
+  var colors = 'hover-bg-' + hoverColor + ' ' + color;
+  var computedClassName = combine(trim$2('\n    ripple\n    ' + (disabled ? 'black-30' : colors) + '\n    dib\n    f6\n    flex items-center justify-around\n    outline-0 border-block br1 pv2 ph3 bg-transparent bn ttu fw5'), className);
+
+  return href ? React.createElement(
+    'a',
+    {
+      href: href,
+      disabled: disabled,
+      style: { fontFamily: 'roboto' },
+      className: 'link ' + computedClassName
+    },
+    children
+  ) : React.createElement(
+    'button',
+    {
+      disabled: disabled,
+      style: { fontFamily: 'roboto' },
+      onClick: not$3(equals$5('file', type)) && onClick,
+      className: computedClassName
+    },
+    children,
+    equals$5('file', type) && React.createElement('input', {
+      type: 'file',
+      onChange: onClick,
+      className: 'absolute top-0 left-0 bottom-0 right-0 o-0'
+    })
+  );
+};
+
+export { index as Button, index$2 as List, ListItem, TextField, TextField$2 as TextArea, Header, Select, MultiSelect, RadioList, FlatButton };
