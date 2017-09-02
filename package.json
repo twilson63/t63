@@ -1,6 +1,6 @@
 {
   "name": "t63",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "Simple Basic React Components",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.es.js",
