@@ -16,19 +16,29 @@ const Card = props => {
 
 Card.Header = ({
   title,
-  subTitle,
+  subtitle,
   showExpandableButton,
   onClick,
-  value = false
+  value = false,
+  avatar
 }) => {
   return (
     <div
       style={{ fontFamily: 'roboto' }}
       className="ph3 pb4 flex items-center justify-between"
     >
-      <div className="">
-        {title && <div className="fw5 f5 black-80">{title}</div>}
-        {subTitle && <div className="mt2 fw3 f6 black-50">{subTitle}</div>}
+      <div className="flex items-center">
+        {avatar && (
+          <img
+            src={avatar}
+            style={{ height: '40px', width: '40px' }}
+            className="br-100"
+          />
+        )}
+        <div className={avatar && 'ml3'}>
+          {title && <div className="fw5 f5 black-80">{title}</div>}
+          {subtitle && <div className="mt2 fw3 f6 black-50">{subtitle}</div>}
+        </div>
       </div>
       {showExpandableButton &&
         (value ? (
