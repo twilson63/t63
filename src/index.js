@@ -8,6 +8,7 @@ import Select from './select'
 import MultiSelect from './multi-select'
 import RadioList from './radio-list'
 import FlatButton from './flat-button'
+import Card from './card'
 
 export {
   Button,
@@ -19,5 +20,6 @@ export {
   Select,
   MultiSelect,
   RadioList,
-  FlatButton
+  FlatButton,
+  Card
 }
