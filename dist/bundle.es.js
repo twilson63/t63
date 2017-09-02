@@ -12846,11 +12846,12 @@ var Card = function Card(props) {
 
 Card.Header = function (_ref) {
   var title = _ref.title,
-      subTitle = _ref.subTitle,
+      subtitle = _ref.subtitle,
       showExpandableButton = _ref.showExpandableButton,
       onClick = _ref.onClick,
       _ref$value = _ref.value,
-      value = _ref$value === undefined ? false : _ref$value;
+      value = _ref$value === undefined ? false : _ref$value,
+      avatar = _ref.avatar;
 
   return React.createElement(
     'div',
@@ -12860,16 +12861,25 @@ Card.Header = function (_ref) {
     },
     React.createElement(
       'div',
-      { className: '' },
-      title && React.createElement(
+      { className: 'flex items-center' },
+      avatar && React.createElement('img', {
+        src: avatar,
+        style: { height: '40px', width: '40px' },
+        className: 'br-100'
+      }),
+      React.createElement(
         'div',
-        { className: 'fw5 f5 black-80' },
-        title
-      ),
-      subTitle && React.createElement(
-        'div',
-        { className: 'mt2 fw3 f6 black-50' },
-        subTitle
+        { className: avatar && 'ml3' },
+        title && React.createElement(
+          'div',
+          { className: 'fw5 f5 black-80' },
+          title
+        ),
+        subtitle && React.createElement(
+          'div',
+          { className: 'mt2 fw3 f6 black-50' },
+          subtitle
+        )
       )
     ),
     showExpandableButton && (value ? React.createElement(MdKbArrowUp, { className: 'f3', onClick: onClick }) : React.createElement(MdKbArrowDown, { className: 'f3', onClick: onClick }))
