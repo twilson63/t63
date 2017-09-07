@@ -61,6 +61,10 @@ const () => (
 * [Select](src/select/README.md)
 * [RadioList](src/radio-list/README.md)
 * [FlatButton](src/flat-button/README.md)
+* [Card](src/card/README.md)
+* [Table](src/table/README.md)
+* [AppBar](src/appbar/README.md)
+* [IconButton](src/icon-button/README.md)
 
 ## Contributions
 

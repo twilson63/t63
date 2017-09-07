@@ -10,6 +10,8 @@ import RadioList from './radio-list'
 import FlatButton from './flat-button'
 import Card from './card'
 import Table from './table'
+import IconButton from './icon-button'
+import AppBar from './appbar'
 
 export {
   Button,
@@ -23,5 +25,7 @@ export {
   RadioList,
   FlatButton,
   Card,
-  Table
+  Table,
+  IconButton,
+  AppBar
 }
