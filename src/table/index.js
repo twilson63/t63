@@ -1,5 +1,8 @@
 import React from 'react'
+import R from 'ramda'
 import combine from '../lib/combine-string-lists'
+
+const { propOr } = R
 
 const Table = props => {
   return (
@@ -14,12 +17,18 @@ const Table = props => {
 }
 
 Table.Row = props => {
+  if (props.hoverColor) {
+    props.className =
+      propOr('', 'className', props) + ' pointer hover-bg-' + props.hoverColor
+  }
   return (
     <div
       aria-role={props['aria-role'] || 'row'}
+      onClick={props.onClick}
       className={combine(
-        'flex h2 bb b--silver justify-around items-center',
-        props.className
+        'flex bb justify-around items-center',
+        props.className,
+        'b--silver'
       )}
       style={props.style}
     >
@@ -32,6 +41,7 @@ Table.Cell = props => {
   return (
     <span
       aria-role={props['aria-role'] || 'cell'}
+      onClick={props.onClick}
       style={props.style}
       className={props.className}
     >

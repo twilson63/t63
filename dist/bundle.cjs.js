@@ -12957,6 +12957,9 @@ Card.Media = function (props) {
   );
 };
 
+var propOr$4 = index$1.propOr;
+
+
 var Table = function Table(props) {
   return React.createElement(
     'div',
@@ -12970,11 +12973,15 @@ var Table = function Table(props) {
 };
 
 Table.Row = function (props) {
+  if (props.hoverColor) {
+    props.className = propOr$4('', 'className', props) + ' pointer hover-bg-' + props.hoverColor;
+  }
   return React.createElement(
     'div',
     {
       'aria-role': props['aria-role'] || 'row',
-      className: combine('flex h2 bb b--silver justify-around items-center', props.className),
+      onClick: props.onClick,
+      className: combine('flex bb justify-around items-center', props.className, 'b--silver'),
       style: props.style
     },
     props.children
@@ -12986,6 +12993,7 @@ Table.Cell = function (props) {
     'span',
     {
       'aria-role': props['aria-role'] || 'cell',
+      onClick: props.onClick,
       style: props.style,
       className: props.className
     },
