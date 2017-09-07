@@ -10,7 +10,9 @@ const thirtyPercent = multiply(0.3)
 
 const Card = props => {
   return (
-    <div className="pv3 shadow-1 w-100 flex flex-column">{props.children}</div>
+    <div className="pv3 br1 shadow-1 w-100 flex flex-column">
+      {props.children}
+    </div>
   )
 }
 

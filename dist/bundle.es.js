@@ -12839,7 +12839,7 @@ var thirtyPercent = multiply$3(0.3);
 var Card = function Card(props) {
   return React.createElement(
     'div',
-    { className: 'pv3 shadow-1 w-100 flex flex-column' },
+    { className: 'pv3 br1 shadow-1 w-100 flex flex-column' },
     props.children
   );
 };
@@ -12951,4 +12951,40 @@ Card.Media = function (props) {
   );
 };
 
-export { index as Button, index$2 as List, ListItem, TextField, TextField$2 as TextArea, Header, Select, MultiSelect, RadioList, FlatButton, Card };
+var Table = function Table(props) {
+  return React.createElement(
+    'div',
+    {
+      'aria-role': props['aria-role'] || 'table',
+      className: combine('flex flex-column', props.className),
+      style: props.style
+    },
+    props.children
+  );
+};
+
+Table.Row = function (props) {
+  return React.createElement(
+    'div',
+    {
+      'aria-role': props['aria-role'] || 'row',
+      className: combine('flex h2 bb b--silver justify-around items-center', props.className),
+      style: props.style
+    },
+    props.children
+  );
+};
+
+Table.Cell = function (props) {
+  return React.createElement(
+    'span',
+    {
+      'aria-role': props['aria-role'] || 'cell',
+      style: props.style,
+      className: props.className
+    },
+    props.children
+  );
+};
+
+export { index as Button, index$2 as List, ListItem, TextField, TextField$2 as TextArea, Header, Select, MultiSelect, RadioList, FlatButton, Card, Table };
